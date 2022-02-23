@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CE5360027C6226E004A8328 /* SreachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE535FF27C6226E004A8328 /* SreachView.swift */; };
+		1CE5360227C62361004A8328 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360127C62361004A8328 /* TrainView.swift */; };
+		1CE5360427C62474004A8328 /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360327C62474004A8328 /* TrainListView.swift */; };
+		1CE5360827C624CB004A8328 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360727C624CB004A8328 /* Model.swift */; };
 		1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE83D8527BA8B38003E8982 /* ElviraApp.swift */; };
-		1CE83D8827BA8B38003E8982 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE83D8727BA8B38003E8982 /* ContentView.swift */; };
 		1CE83D8A27BA8B3C003E8982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8927BA8B3C003E8982 /* Assets.xcassets */; };
 		1CE83D8D27BA8B3C003E8982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8C27BA8B3C003E8982 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CE535FF27C6226E004A8328 /* SreachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SreachView.swift; sourceTree = "<group>"; };
+		1CE5360127C62361004A8328 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		1CE5360327C62474004A8328 /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
+		1CE5360727C624CB004A8328 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1CE83D8227BA8B38003E8982 /* Elvira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elvira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE83D8527BA8B38003E8982 /* ElviraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraApp.swift; sourceTree = "<group>"; };
-		1CE83D8727BA8B38003E8982 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CE83D8927BA8B3C003E8982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CE83D8C27BA8B3C003E8982 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +38,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CE535FE27C6225D004A8328 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CE535FF27C6226E004A8328 /* SreachView.swift */,
+				1CE5360127C62361004A8328 /* TrainView.swift */,
+				1CE5360327C62474004A8328 /* TrainListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1CE5360527C624A3004A8328 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CE5360727C624CB004A8328 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CE5360927C62536004A8328 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1CE83D7927BA8B38003E8982 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +82,10 @@
 		1CE83D8427BA8B38003E8982 /* Elvira */ = {
 			isa = PBXGroup;
 			children = (
+				1CE5360527C624A3004A8328 /* Model */,
+				1CE5360927C62536004A8328 /* ViewModel */,
+				1CE535FE27C6225D004A8328 /* View */,
 				1CE83D8527BA8B38003E8982 /* ElviraApp.swift */,
-				1CE83D8727BA8B38003E8982 /* ContentView.swift */,
 				1CE83D8927BA8B3C003E8982 /* Assets.xcassets */,
 				1CE83D8B27BA8B3C003E8982 /* Preview Content */,
 			);
@@ -137,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CE83D8827BA8B38003E8982 /* ContentView.swift in Sources */,
+				1CE5360827C624CB004A8328 /* Model.swift in Sources */,
 				1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */,
+				1CE5360227C62361004A8328 /* TrainView.swift in Sources */,
+				1CE5360027C6226E004A8328 /* SreachView.swift in Sources */,
+				1CE5360427C62474004A8328 /* TrainListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elvira/Preview Content\"";
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -297,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elvira/Preview Content\"";
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

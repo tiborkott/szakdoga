@@ -5,16 +5,7 @@
 //  Created by Kött Tibor on 2022. 02. 23..
 //
 
-import SwiftUI
-
-//
-//  ContentView.swift
-//  Elvira
-//
-//  Created by Kött Tibor on 2022. 02. 14..
-//
-
-//https://apiv2.oroszi.net/elvira?from=Cegléd&to=Zugló&date=2022.02.17
+//https://apiv2.oroszi.net/elvira?from=Cegléd&to=Zugló&date=2022.02.23
 
 import SwiftUI
 
@@ -22,14 +13,14 @@ struct SearchView: View {
     @State private var from: String = ""
     @State private var to: String = ""
     @State private var keyboardHeight: CGFloat = 0
+    @State private var elviraApi = ElviraApi()
     
     var body: some View {
         
         ZStack {
             Color.clear
             VStack{
-              
-                Text("Menetrend")
+                Label("Menetrend", systemImage: "")
                         .font(.subheadline)
                         .frame(width: UIScreen.main.bounds.size.width * 0.9,
                                height: UIScreen.main.bounds.size.height * 0.1)
@@ -49,9 +40,10 @@ struct SearchView: View {
                
                 Spacer()
                 
-                
+               
                 Button("Keresés") {
-                    //Action
+                    elviraApi.fetchElvira(from: from, to: to)
+                    //print(elviraApi.timetables ?? "Még üres")
                 }
                 .frame(width: UIScreen.main.bounds.size.width * 0.5,
                         height: UIScreen.main.bounds.size.height * 0.05)

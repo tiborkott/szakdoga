@@ -9,9 +9,13 @@ import SwiftUI
 
 
 struct TrainList: View {
+    
+    
     var body: some View {
         NavigationView{
-            
+            List{
+                
+            }
         }
     }
 }

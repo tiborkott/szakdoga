@@ -12,21 +12,22 @@ struct TrainView: View {
         VStack {
             
             HStack {
-                VStack {
-                    Text("Honnan")
-                    Text("07:26")
+                VStack(alignment: .leading) {
+                    Label("Honnan", systemImage: "")
+                    Label("07:26", systemImage: "")
                 }
                 .padding()
                 Spacer()
-                VStack {
-                    Text("Hova")
-                    Text("08:30")
+                
+                VStack(alignment: .trailing) {
+                    Label("Hova", systemImage: "")
+                    Label("08:30", systemImage: "")
                 }
                 .padding()
             }
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                height: UIScreen.main.bounds.size.height * 0.12)
+        .frame(width: UIScreen.main.bounds.size.width * 0.95,
+                height: UIScreen.main.bounds.size.height * 0.14)
         .background(Color("MAV-LightGray"))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(radius: 5)

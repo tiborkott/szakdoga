@@ -48,6 +48,7 @@ struct SearchView: View {
                         .foregroundColor(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .padding(.bottom, 20)
+                        
                     }
                     
                     

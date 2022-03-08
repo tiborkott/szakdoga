@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct TrainListView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var trainListViewModel = TrainListViewModel()
     
     var from: String
@@ -21,7 +23,8 @@ struct TrainListView: View {
                 TrainView(from: timetable.details[0].from,
                           fromtime: timetable.starttime,
                           to: timetable.details[1].from,
-                          totime: timetable.destinationtime
+                          totime: timetable.destinationtime,
+                          details: timetable.details
                 )
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
@@ -30,9 +33,17 @@ struct TrainListView: View {
             }
         }.onAppear(){
             trainListViewModel.fetchElvira(from: from, to: to)
-        }.navigationBarTitle("")
+        }.background(Color("MAV-LightGray"))
+         .navigationBarTitle("")
          .navigationBarTitleDisplayMode(.inline)
-    }
+         .navigationBarBackButtonHidden(true)
+         .navigationBarItems(leading:
+                     Button(action: {
+                         self.presentationMode.wrappedValue.dismiss()
+                     }) {
+                        Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
+                 })
+        }
 }
 
 //struct TrainList_Previews: PreviewProvider {

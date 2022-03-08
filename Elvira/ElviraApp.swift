@@ -12,6 +12,7 @@ struct ElviraApp: App {
     var body: some Scene {
         WindowGroup {
             SearchView()
+            //TrainListView()
         }
     }
 }

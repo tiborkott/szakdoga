@@ -13,63 +13,59 @@ struct SearchView: View {
     @State private var from: String = ""
     @State private var to: String = ""
     @State private var keyboardHeight: CGFloat = 0
-    @State private var elviraApi = ElviraApi()
+    
     
     var body: some View {
-        
-        ZStack {
-            Color.clear
-            VStack{
-                Label("Menetrend", systemImage: "")
-                        .font(.subheadline)
+        NavigationView{
+            ZStack {
+                Color.clear
+                VStack{
+                    Label("Menetrend", systemImage: "")
+                        .font(.title3)
                         .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                               height: UIScreen.main.bounds.size.height * 0.1)
+                                   height: UIScreen.main.bounds.size.height * 0.1)
                         .background(Color("MAV-Blue"))
                         .foregroundColor(Color.white)
-                
-               
-                TextField("Honnan?",text: $from)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color.black)
-                
-                TextField("Hova?",text: $to)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .foregroundColor(Color.black)
-               
-                Spacer()
-                
-               
-                Button("Keresés") {
-                    elviraApi.fetchElvira(from: from, to: to)
-                    //print(elviraApi.timetables ?? "Még üres")
+                    
+                   
+                    TextField("Honnan?",text: $from)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(Color.black)
+                    
+                    TextField("Hova?",text: $to)
+                        .padding()
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(Color.black)
+                   
+                    Spacer()
+                    
+                    NavigationLink(destination: TrainListView(from: from, to: to)) {
+                        Text("Keresés")
+                        .frame(width: UIScreen.main.bounds.size.width * 0.5,
+                                height: UIScreen.main.bounds.size.height * 0.05)
+                        .background(Color("MAV-Yellow"))
+                        .foregroundColor(Color.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .padding(.bottom, 20)
+                    }
+                    
+                    
                 }
-                .frame(width: UIScreen.main.bounds.size.width * 0.5,
-                        height: UIScreen.main.bounds.size.height * 0.05)
-                .background(Color("MAV-Yellow"))
-                .foregroundColor(Color.black)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .padding(.bottom, 20)
+                .frame(width: UIScreen.main.bounds.size.width * 0.9,
+                       height: UIScreen.main.bounds.size.height * 0.5)
+                
+                .background(Color.white )
+                .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .shadow(radius: 10)
+                
                 
             }
-            .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                   height: UIScreen.main.bounds.size.height * 0.5)
-            
-            .background(Color.white )
-            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-            .shadow(radius: 10)
-            
-            
+            .offset(y: -50)
+            .background(Color("MAV-LightGray") )
+            .ignoresSafeArea()
         }
-        .offset(y: -50)
-        .background(
-            Image("mav_bg")
-                .resizable()
-                .scaledToFill()
-            )
-        .ignoresSafeArea()
-    }
+   }
 }
 
 

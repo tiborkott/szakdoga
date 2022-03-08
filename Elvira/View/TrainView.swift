@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct TrainView: View {
+    var from: String
+    var fromtime: String
+    var to: String
+    var totime: String
+    
+
     var body: some View {
         VStack {
             
             HStack {
                 VStack(alignment: .leading) {
-                    Label("Honnan", systemImage: "")
-                    Label("07:26", systemImage: "")
+                    Label(from, systemImage: "")
+                    Label(fromtime, systemImage: "")
                 }
                 .padding()
                 Spacer()
                 
                 VStack(alignment: .trailing) {
-                    Label("Hova", systemImage: "")
-                    Label("08:30", systemImage: "")
+                    Label(to, systemImage: "")
+                    Label(totime, systemImage: "")
                 }
                 .padding()
             }
@@ -35,8 +41,8 @@ struct TrainView: View {
     
 }
 
-struct TrainView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrainView()
-    }
-}
+// TrainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //TrainView()
+//    }
+//}

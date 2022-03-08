@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39430227D69B79003D2E0F /* TrainListViewModel.swift */; };
 		1CE0883E27D55F6A007A4E11 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883627D55F69007A4E11 /* Detail.swift */; };
 		1CE0883F27D55F6A007A4E11 /* TimetableTrainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */; };
 		1CE0884027D55F6A007A4E11 /* DetailTrainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883827D55F69007A4E11 /* DetailTrainInfo.swift */; };
@@ -18,7 +19,6 @@
 		1CE5360027C6226E004A8328 /* SreachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE535FF27C6226E004A8328 /* SreachView.swift */; };
 		1CE5360227C62361004A8328 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360127C62361004A8328 /* TrainView.swift */; };
 		1CE5360427C62474004A8328 /* TrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360327C62474004A8328 /* TrainListView.swift */; };
-		1CE5360B27C63983004A8328 /* ElviraApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5360A27C63983004A8328 /* ElviraApi.swift */; };
 		1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE83D8527BA8B38003E8982 /* ElviraApp.swift */; };
 		1CE83D8A27BA8B3C003E8982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8927BA8B3C003E8982 /* Assets.xcassets */; };
 		1CE83D8D27BA8B3C003E8982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8C27BA8B3C003E8982 /* Preview Assets.xcassets */; };
@@ -28,6 +28,7 @@
 /* Begin PBXFileReference section */
 		03FD86C454894FB06D8A82E3 /* Pods-Elvira.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.debug.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.debug.xcconfig"; sourceTree = "<group>"; };
 		131CC6A0E1D78412A9C50719 /* Pods-Elvira.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.release.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.release.xcconfig"; sourceTree = "<group>"; };
+		1C39430227D69B79003D2E0F /* TrainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewModel.swift; sourceTree = "<group>"; };
 		1CE0883627D55F69007A4E11 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableTrainInfo.swift; sourceTree = "<group>"; };
 		1CE0883827D55F69007A4E11 /* DetailTrainInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTrainInfo.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		1CE535FF27C6226E004A8328 /* SreachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SreachView.swift; sourceTree = "<group>"; };
 		1CE5360127C62361004A8328 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		1CE5360327C62474004A8328 /* TrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListView.swift; sourceTree = "<group>"; };
-		1CE5360A27C63983004A8328 /* ElviraApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraApi.swift; sourceTree = "<group>"; };
 		1CE83D8227BA8B38003E8982 /* Elvira.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elvira.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE83D8527BA8B38003E8982 /* ElviraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraApp.swift; sourceTree = "<group>"; };
 		1CE83D8927BA8B3C003E8982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,6 @@
 				1CE0883D27D55F6A007A4E11 /* Timetables.swift */,
 				1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */,
 				1CE0883C27D55F6A007A4E11 /* TrainInfoService.swift */,
-				1CE5360A27C63983004A8328 /* ElviraApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,6 +87,7 @@
 		1CE5360927C62536004A8328 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1C39430227D69B79003D2E0F /* TrainListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -263,12 +263,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE0884227D55F6A007A4E11 /* JSONSchemaSupport.swift in Sources */,
-				1CE5360B27C63983004A8328 /* ElviraApi.swift in Sources */,
 				1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */,
 				1CE0883E27D55F6A007A4E11 /* Detail.swift in Sources */,
 				1CE0884127D55F6A007A4E11 /* DetailService.swift in Sources */,
 				1CE0883F27D55F6A007A4E11 /* TimetableTrainInfo.swift in Sources */,
 				1CE0884327D55F6A007A4E11 /* Timetable.swift in Sources */,
+				1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */,
 				1CE5360227C62361004A8328 /* TrainView.swift in Sources */,
 				1CE0884427D55F6A007A4E11 /* TrainInfoService.swift in Sources */,
 				1CE0884027D55F6A007A4E11 /* DetailTrainInfo.swift in Sources */,

@@ -10,10 +10,12 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var from: String = ""
     @State private var to: String = ""
     @State private var keyboardHeight: CGFloat = 0
-    
+    @State private var fromSearch: String = ""
+    @State private var toSearch: String = ""
     
     var body: some View {
         NavigationView{
@@ -26,17 +28,17 @@ struct SearchView: View {
                                    height: UIScreen.main.bounds.size.height * 0.1)
                         .background(Color("MAV-Blue"))
                         .foregroundColor(Color.white)
+                
                     
-                   
                     TextField("Honnan?",text: $from)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(Color.black)
-                    
+                        
+                        
                     TextField("Hova?",text: $to)
                         .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(Color.black)
+
                    
                     Spacer()
                     
@@ -56,7 +58,7 @@ struct SearchView: View {
                 .frame(width: UIScreen.main.bounds.size.width * 0.9,
                        height: UIScreen.main.bounds.size.height * 0.5)
                 
-                .background(Color.white )
+                .background(Color("MAV-White") )
                 .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                 .shadow(radius: 10)
                 

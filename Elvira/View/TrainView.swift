@@ -18,15 +18,15 @@ struct TrainView: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Label(from, systemImage: "").foregroundColor(Color.black)
-                        Label(fromtime, systemImage: "").foregroundColor(Color.black)
+                        Label(from, systemImage: "")
+                        Label(fromtime, systemImage: "")
                     }
                     .padding()
                     Spacer()
                     
                     VStack(alignment: .trailing) {
-                        Label(to, systemImage: "").foregroundColor(Color.black)
-                        Label(totime, systemImage: "").foregroundColor(Color.black)
+                        Label(to, systemImage: "")
+                        Label(totime, systemImage: "")
                     }
                     
                     NavigationLink(destination: DetailView(details: details)){
@@ -38,7 +38,7 @@ struct TrainView: View {
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.95,
                     height: UIScreen.main.bounds.size.height * 0.14)
-            .background(Color.white)
+            .background(Color("MAV-White"))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
         }

@@ -16,15 +16,16 @@ struct DetailView: View {
         ZStack{
             Color.clear
             VStack{
-                Text(details[0].trainInfo?.info ?? "default")
+                Text("Details")
+                //Text(details[0].trainInfo?.info ?? "default")
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
                      height: UIScreen.main.bounds.size.height * 0.6)
-            .background(Color.white )
+            .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
         }
-        .offset(y: -70)
+        .offset(y: -100)
         .background(Color("MAV-LightGray"))
         .navigationBarTitle("")
         .navigationBarTitleDisplayMode(.inline)

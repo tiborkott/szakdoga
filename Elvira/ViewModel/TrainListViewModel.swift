@@ -9,7 +9,6 @@ import SwiftUI
 import Alamofire
 
 class TrainListViewModel: ObservableObject{
-    
     @Published var timetables: Timetables?
     
     
@@ -34,7 +33,7 @@ class TrainListViewModel: ObservableObject{
             
             do{
                 self.timetables = try JSONDecoder().decode(Timetables.self, from: response.data!)
-                print(self.timetables!)
+                //print(self.timetables!)
             }catch{
                 print(error)
             }

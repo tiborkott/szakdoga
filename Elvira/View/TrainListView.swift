@@ -10,8 +10,8 @@ import SwiftUI
 
 struct TrainListView: View {
     @Environment(\.presentationMode) var presentationMode
-    
     @ObservedObject var trainListViewModel = TrainListViewModel()
+    @State var isLoading = false
     
     var from: String
     var to: String
@@ -31,8 +31,21 @@ struct TrainListView: View {
                 .padding(.bottom, 10)
                 
             }
+            
+            if isLoading {
+                ZStack{
+                    Color("MAV-LightGray").ignoresSafeArea()
+                }
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
+           
+            }
+            
         }.onAppear(){
+            isLoading = true
             trainListViewModel.fetchElvira(from: from, to: to)
+            isLoading = false
+            
         }.background(Color("MAV-LightGray"))
          .navigationBarTitle("")
          .navigationBarTitleDisplayMode(.inline)

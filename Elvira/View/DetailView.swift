@@ -9,23 +9,44 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var trainListViewModel = TrainListViewModel()
     
     var details: [Detail]
     
     var body: some View {
         ZStack{
-            Color.clear
             VStack{
-                Text("Details")
-                //Text(details[0].trainInfo?.info ?? "default")
+                Text((details[0].trainInfo?.code ?? " ") + " " + (details[0].trainInfo?.info ?? " "))
+                    .multilineTextAlignment(.leading)
+                    .font(.system(size: 18, weight: .bold))
+                    .padding(.top, 20)
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
+                
+                Text(trainListViewModel.timetables?.timetable[0].totaltime ?? "")
+                Text(trainListViewModel.timetables?.timetable[0].type ?? " ")
+                
+                ScrollView(showsIndicators: false){
+                    ForEach(details){ detail in
+                        if(!detail.dep.isEmpty){
+                            StationView(detail: detail)
+                                .padding(10)
+                        }
+                        
+                    }
+                }
+                    
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                     height: UIScreen.main.bounds.size.height * 0.6)
+                   height: UIScreen.main.bounds.size.height * 0.85)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
+            .padding(.bottom, 150)
+            .offset(y: 60)
+            
         }
-        .offset(y: -100)
+        .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
         .background(Color("MAV-LightGray"))
         .navigationBarTitle("")
         .navigationBarTitleDisplayMode(.inline)

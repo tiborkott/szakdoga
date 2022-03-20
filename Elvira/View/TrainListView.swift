@@ -11,48 +11,34 @@ import SwiftUI
 struct TrainListView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var trainListViewModel = TrainListViewModel()
-    @State var isLoading = false
     
     var from: String
     var to: String
     
 
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators: false){
             ForEach(trainListViewModel.timetables?.timetable ?? []){ timetable in
                 TrainView(from: timetable.details[0].from,
                           fromtime: timetable.starttime,
-                          to: timetable.details[1].from,
+                          to: timetable.details[timetable.details.count-1].from,
                           totime: timetable.destinationtime,
                           details: timetable.details
                 )
-                .padding(.leading, 10)
-                .padding(.trailing, 10)
-                .padding(.bottom, 10)
+                .padding(10)
+                
                 
             }
-            
-            if isLoading {
-                ZStack{
-                    Color("MAV-LightGray").ignoresSafeArea()
-                }
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
-           
-            }
-            
         }.onAppear(){
-            isLoading = true
             trainListViewModel.fetchElvira(from: from, to: to)
-            isLoading = false
-            
-        }.background(Color("MAV-LightGray"))
-         .navigationBarTitle("")
+        }
+         .background(Color("MAV-LightGray"))
+         .navigationBarTitle("Vonatok")
          .navigationBarTitleDisplayMode(.inline)
          .navigationBarBackButtonHidden(true)
          .navigationBarItems(leading:
                      Button(action: {
-                         self.presentationMode.wrappedValue.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()
                      }) {
                         Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
                  })

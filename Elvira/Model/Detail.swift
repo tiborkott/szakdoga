@@ -6,7 +6,8 @@
 import Foundation
 
 // MARK: - Detail
-struct Detail: Codable {
+struct Detail: Codable, Identifiable {
+    let id = UUID()
     let from: String
     let dep: String
     let depReal: String

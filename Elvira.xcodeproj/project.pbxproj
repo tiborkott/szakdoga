@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C6EEF27E7C3BE005E8641 /* StationView.swift */; };
 		1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39430227D69B79003D2E0F /* TrainListViewModel.swift */; };
 		1C426FF927D7DDBD0007B0A2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C426FF827D7DDBD0007B0A2 /* DetailView.swift */; };
+		1C48AB7B27E6596200D84286 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB7A27E6596200D84286 /* SearchViewModel.swift */; };
+		1C48AB8127E6941C00D84286 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB8027E6941C00D84286 /* HomeView.swift */; };
+		1C48AB8327E6942C00D84286 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB8227E6942C00D84286 /* FavoriteView.swift */; };
+		1C48AB8527E69DD800D84286 /* TrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB8427E69DD800D84286 /* TrainViewModel.swift */; };
 		1C86B48727DF9F6100301597 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86B48627DF9F6100301597 /* StationList.swift */; };
 		1CE0883E27D55F6A007A4E11 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883627D55F69007A4E11 /* Detail.swift */; };
 		1CE0883F27D55F6A007A4E11 /* TimetableTrainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */; };
@@ -24,14 +29,17 @@
 		1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE83D8527BA8B38003E8982 /* ElviraApp.swift */; };
 		1CE83D8A27BA8B3C003E8982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8927BA8B3C003E8982 /* Assets.xcassets */; };
 		1CE83D8D27BA8B3C003E8982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE83D8C27BA8B3C003E8982 /* Preview Assets.xcassets */; };
-		C24298BDBB707233E53D895A /* Pods_Elvira.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5871030B80F2FF91AB78E496 /* Pods_Elvira.framework */; };
+		B3F2333AD10A2745BB15C34A /* Pods_Elvira.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8407FC9E1A8D754C81D73951 /* Pods_Elvira.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03FD86C454894FB06D8A82E3 /* Pods-Elvira.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.debug.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.debug.xcconfig"; sourceTree = "<group>"; };
-		131CC6A0E1D78412A9C50719 /* Pods-Elvira.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.release.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.release.xcconfig"; sourceTree = "<group>"; };
+		1C2C6EEF27E7C3BE005E8641 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		1C39430227D69B79003D2E0F /* TrainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewModel.swift; sourceTree = "<group>"; };
 		1C426FF827D7DDBD0007B0A2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1C48AB7A27E6596200D84286 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		1C48AB8027E6941C00D84286 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1C48AB8227E6942C00D84286 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		1C48AB8427E69DD800D84286 /* TrainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewModel.swift; sourceTree = "<group>"; };
 		1C86B48627DF9F6100301597 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
 		1CE0883627D55F69007A4E11 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableTrainInfo.swift; sourceTree = "<group>"; };
@@ -48,7 +56,9 @@
 		1CE83D8527BA8B38003E8982 /* ElviraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraApp.swift; sourceTree = "<group>"; };
 		1CE83D8927BA8B3C003E8982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CE83D8C27BA8B3C003E8982 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5871030B80F2FF91AB78E496 /* Pods_Elvira.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elvira.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		419B02DDAB36893FB2ED0750 /* Pods-Elvira.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.debug.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.debug.xcconfig"; sourceTree = "<group>"; };
+		44D93A73BA93E64D3B6E6DBF /* Pods-Elvira.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elvira.release.xcconfig"; path = "Target Support Files/Pods-Elvira/Pods-Elvira.release.xcconfig"; sourceTree = "<group>"; };
+		8407FC9E1A8D754C81D73951 /* Pods_Elvira.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elvira.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C24298BDBB707233E53D895A /* Pods_Elvira.framework in Frameworks */,
+				B3F2333AD10A2745BB15C34A /* Pods_Elvira.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,10 +76,13 @@
 		1CE535FE27C6225D004A8328 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C48AB8027E6941C00D84286 /* HomeView.swift */,
 				1CE535FF27C6226E004A8328 /* SreachView.swift */,
+				1C48AB8227E6942C00D84286 /* FavoriteView.swift */,
 				1CE5360127C62361004A8328 /* TrainView.swift */,
 				1CE5360327C62474004A8328 /* TrainListView.swift */,
 				1C426FF827D7DDBD0007B0A2 /* DetailView.swift */,
+				1C2C6EEF27E7C3BE005E8641 /* StationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,7 +106,9 @@
 		1CE5360927C62536004A8328 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1C48AB8427E69DD800D84286 /* TrainViewModel.swift */,
 				1C39430227D69B79003D2E0F /* TrainListViewModel.swift */,
+				1C48AB7A27E6596200D84286 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,8 +118,8 @@
 			children = (
 				1CE83D8427BA8B38003E8982 /* Elvira */,
 				1CE83D8327BA8B38003E8982 /* Products */,
-				270DC4EE9ACE03F36D8F7070 /* Pods */,
-				ADFE656CEFABC93532E07876 /* Frameworks */,
+				575C1EC030442697683BC0DD /* Pods */,
+				D4C2F86E5443811918570E83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,19 +152,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		270DC4EE9ACE03F36D8F7070 /* Pods */ = {
+		575C1EC030442697683BC0DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03FD86C454894FB06D8A82E3 /* Pods-Elvira.debug.xcconfig */,
-				131CC6A0E1D78412A9C50719 /* Pods-Elvira.release.xcconfig */,
+				419B02DDAB36893FB2ED0750 /* Pods-Elvira.debug.xcconfig */,
+				44D93A73BA93E64D3B6E6DBF /* Pods-Elvira.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		ADFE656CEFABC93532E07876 /* Frameworks */ = {
+		D4C2F86E5443811918570E83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5871030B80F2FF91AB78E496 /* Pods_Elvira.framework */,
+				8407FC9E1A8D754C81D73951 /* Pods_Elvira.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,18 +285,23 @@
 			files = (
 				1C86B48727DF9F6100301597 /* StationList.swift in Sources */,
 				1CE0884227D55F6A007A4E11 /* JSONSchemaSupport.swift in Sources */,
+				1C48AB7B27E6596200D84286 /* SearchViewModel.swift in Sources */,
 				1CE83D8627BA8B38003E8982 /* ElviraApp.swift in Sources */,
 				1CE0883E27D55F6A007A4E11 /* Detail.swift in Sources */,
+				1C48AB8127E6941C00D84286 /* HomeView.swift in Sources */,
 				1C426FF927D7DDBD0007B0A2 /* DetailView.swift in Sources */,
 				1CE0884127D55F6A007A4E11 /* DetailService.swift in Sources */,
 				1CE0883F27D55F6A007A4E11 /* TimetableTrainInfo.swift in Sources */,
+				1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */,
 				1CE0884327D55F6A007A4E11 /* Timetable.swift in Sources */,
 				1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */,
+				1C48AB8527E69DD800D84286 /* TrainViewModel.swift in Sources */,
 				1CE5360227C62361004A8328 /* TrainView.swift in Sources */,
 				1CE0884427D55F6A007A4E11 /* TrainInfoService.swift in Sources */,
 				1CE0884027D55F6A007A4E11 /* DetailTrainInfo.swift in Sources */,
 				1CE0884527D55F6A007A4E11 /* Timetables.swift in Sources */,
 				1CE5360027C6226E004A8328 /* SreachView.swift in Sources */,
+				1C48AB8327E6942C00D84286 /* FavoriteView.swift in Sources */,
 				1CE5360427C62474004A8328 /* TrainListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +427,7 @@
 		};
 		1CE83D9127BA8B3C003E8982 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03FD86C454894FB06D8A82E3 /* Pods-Elvira.debug.xcconfig */;
+			baseConfigurationReference = 419B02DDAB36893FB2ED0750 /* Pods-Elvira.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +440,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -437,7 +458,7 @@
 		};
 		1CE83D9227BA8B3C003E8982 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 131CC6A0E1D78412A9C50719 /* Pods-Elvira.release.xcconfig */;
+			baseConfigurationReference = 44D93A73BA93E64D3B6E6DBF /* Pods-Elvira.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +471,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

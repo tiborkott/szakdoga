@@ -16,17 +16,24 @@ struct TrainView: View {
 
     var body: some View {
             VStack {
+                //Text(details[0].trainInfo?.info.components(separatedBy:" ")[0] ?? " ")
+
                 HStack {
+                    Image(systemName: "train.side.front.car").foregroundColor(.blue)
+                        .padding(.leading, 10)
+                        .padding(.bottom, 32)
                     VStack(alignment: .leading) {
-                        Label(from, systemImage: "")
-                        Label(fromtime, systemImage: "")
+                        Text(from)
+                            .padding(.bottom, 4)
+                        Text(fromtime)
                     }
                     .padding()
                     Spacer()
                     
                     VStack(alignment: .trailing) {
-                        Label(to, systemImage: "")
-                        Label(totime, systemImage: "")
+                        Text(to)
+                            .padding(.bottom, 4)
+                        Text(totime)
                     }
                     
                     NavigationLink(destination: DetailView(details: details)){
@@ -37,7 +44,7 @@ struct TrainView: View {
                 }
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.95,
-                    height: UIScreen.main.bounds.size.height * 0.14)
+                    height: UIScreen.main.bounds.size.height * 0.13)
             .background(Color("MAV-White"))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)

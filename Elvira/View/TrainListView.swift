@@ -11,38 +11,59 @@ import SwiftUI
 struct TrainListView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var trainListViewModel = TrainListViewModel()
-    
+
     var from: String
     var to: String
     
 
     var body: some View {
-        ScrollView(showsIndicators: false){
-            ForEach(trainListViewModel.timetables?.timetable ?? []){ timetable in
-                TrainView(from: timetable.details[0].from,
-                          fromtime: timetable.starttime,
-                          to: timetable.details[timetable.details.count-1].from,
-                          totime: timetable.destinationtime,
-                          details: timetable.details
-                )
-                .padding(10)
-                
-                
+        VStack{
+            if(trainListViewModel.loaded == true){
+                ScrollView(showsIndicators: false){
+                    ForEach(trainListViewModel.timetables?.timetable ?? []){ timetable in
+                        TrainView(from: timetable.details[0].from,
+                                  fromtime: timetable.starttime,
+                                  to: timetable.details[timetable.details.count-1].from,
+                                  totime: timetable.destinationtime,
+                                  timetable: timetable
+                        )
+                        .padding(10)
+                        
+                        
+                    }
+                }
+                 .background(Color("MAV-LightGray"))
+                 .navigationBarTitle("Vonatok")
+                 .navigationBarTitleDisplayMode(.inline)
+                 .navigationBarBackButtonHidden(true)
+                 .navigationBarItems(leading:
+                             Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                             }) {
+                                Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
+                         })
+            }else{
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .tint(Color("MAV-Blue"))
+                    .font(.headline)
+                    .onAppear(){
+                        trainListViewModel.fetchElvira(from: from, to: to)
+                    }
+                    .background(Color("MAV-LightGray"))
+                    .navigationBarTitle("Vonatok")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarItems(leading:
+                                Button(action: {
+                                   self.presentationMode.wrappedValue.dismiss()
+                                }) {
+                                   Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
+                            })
+                    
             }
-        }.onAppear(){
-            trainListViewModel.fetchElvira(from: from, to: to)
         }
-         .background(Color("MAV-LightGray"))
-         .navigationBarTitle("Vonatok")
-         .navigationBarTitleDisplayMode(.inline)
-         .navigationBarBackButtonHidden(true)
-         .navigationBarItems(leading:
-                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                     }) {
-                        Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
-                 })
-        }
+    }
 }
 
 //struct TrainList_Previews: PreviewProvider {

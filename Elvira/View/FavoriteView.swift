@@ -2,33 +2,46 @@
 //  FavoriteView.swift
 //  Elvira
 //
-//  Created by Kött Tibor on 2022. 03. 19..
+//  Created by Kött Tibor on 2022. 03. 21..
 //
 
 import SwiftUI
 
 struct FavoriteView: View {
+    @State private var when = Date.now
+    
     var body: some View {
         VStack{
-            Text("Kedvencek")
-                .font(.system(size: 20, weight: .bold))
-                //.font(.system(size: 15, weight: .bold))
-                .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                        height: UIScreen.main.bounds.size.height * 0.1)
-                .background(Color("MAV-Yellow"))
-                .foregroundColor(Color.black)
-                .offset(y: -70)
-                
-            Text("Vonat1 ")
-                .frame(width: UIScreen.main.bounds.size.width * 0.8,
-                        height: UIScreen.main.bounds.size.height * 0.2)
+            HStack {
+                Text("A vonat neve")
+                    .padding(10)
+                Spacer()
+                Text("A vonat típusa")
+                    .padding(10)
+            }
+            HStack {
+                Text("Honnan")
+                    .padding(10)
+                Spacer()
+                Text("Hova")
+                    .padding(10)
+            }
+            HStack{
+                Text("18:00")
+                    .padding(10)
+                Spacer()
+                Text("20:00")
+                    .padding(10)
+            }
+            DatePicker("Értesítés ennyivel korábban:", selection: $when, displayedComponents: .hourAndMinute)
+                .padding(10)
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                height: UIScreen.main.bounds.size.height * 0.5)
-        .background(Color("MAV-White") )
-        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-        .shadow(radius: 10)
-        .padding(.bottom, 100)
+        .frame(width: UIScreen.main.bounds.size.width * 0.85,
+                height: UIScreen.main.bounds.size.height * 0.35)
+        .background(Color("MAV-White"))
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .shadow(radius: 5)
+        .padding(10)
     }
 }
 

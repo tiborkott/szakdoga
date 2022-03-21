@@ -12,34 +12,63 @@ struct TrainView: View {
     var fromtime: String
     var to: String
     var totime: String
-    var details: [Detail]
+    var timetable: Timetable
 
     var body: some View {
             VStack {
                 //Text(details[0].trainInfo?.info.components(separatedBy:" ")[0] ?? " ")
 
                 HStack {
-                    Image(systemName: "train.side.front.car").foregroundColor(.blue)
-                        .padding(.leading, 10)
-                        .padding(.bottom, 32)
+                    VStack{
+                        Image(systemName: "train.side.front.car").foregroundColor({
+                            if(timetable.details[0].trainInfo!.info.contains("gyors")){
+                                return Color.red
+                            }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
+                                return Color.green
+                            }else if(timetable.details[0].trainInfo!.info.contains("IC")){
+                                return Color.blue
+                            }else{
+                                return Color("MAV-Black")
+                            }
+                        }())
+                            .padding(10)
+                        Button () {
+                            
+                        }label: {
+                            Image(systemName: "heart").foregroundColor(Color("MAV-Black"))
+                                .padding(10)
+                        }
+                       
+            
+                        Spacer()
+                    }
+                    
+                        
                     VStack(alignment: .leading) {
                         Text(from)
                             .padding(.bottom, 4)
                         Text(fromtime)
+                        Text(timetable.details[0].depReal)
+                            .foregroundColor(Color.red)
                     }
                     .padding()
+                    
                     Spacer()
                     
                     VStack(alignment: .trailing) {
                         Text(to)
                             .padding(.bottom, 4)
                         Text(totime)
+                        Text("  ")
                     }
                     
-                    NavigationLink(destination: DetailView(details: details)){
-                        Image(systemName: "chevron.right").foregroundColor(Color("MAV-Blue"))
+                    VStack{
+                        NavigationLink(destination: DetailView(details: timetable.details)){
+                            Image(systemName: "chevron.right").foregroundColor(Color("MAV-Blue"))
+                        }
+                        .padding(10)
                     }
-                    .padding()
+                    
                     
                 }
             }

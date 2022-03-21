@@ -10,7 +10,7 @@ import Alamofire
 
 class TrainListViewModel: ObservableObject{
     @Published var timetables: Timetables?
-    
+    @Published var loaded: Bool = false
     
     func fetchElvira(from: String, to: String){
         let from_url = from.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
@@ -33,6 +33,7 @@ class TrainListViewModel: ObservableObject{
             
             do{
                 self.timetables = try JSONDecoder().decode(Timetables.self, from: response.data!)
+                self.loaded = true
                 //print(self.timetables!)
             }catch{
                 print(error)

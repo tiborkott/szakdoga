@@ -51,7 +51,7 @@ struct TrainView: View {
                         Text(timetable.details[0].depReal)
                             .foregroundColor(Color.red)
                     }
-                    .padding()
+                    .padding(10)
                     
                     Spacer()
                     
@@ -61,6 +61,7 @@ struct TrainView: View {
                         Text(totime)
                         Text("  ")
                     }
+                    .padding(10)
                     
                     VStack{
                         NavigationLink(destination: DetailView(details: timetable.details)){
@@ -73,7 +74,7 @@ struct TrainView: View {
                 }
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.95,
-                    height: UIScreen.main.bounds.size.height * 0.13)
+                    height: UIScreen.main.bounds.size.height * 0.15)
             .background(Color("MAV-White"))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)

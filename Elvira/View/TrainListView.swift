@@ -43,14 +43,12 @@ struct TrainListView: View {
                                 Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
                          })
             }else{
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-                    .tint(Color("MAV-Blue"))
-                    .font(.headline)
+                ProgressView(value: 0.3)
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
+                    .background(Color("MAV-LightGray"))
                     .onAppear(){
                         trainListViewModel.fetchElvira(from: from, to: to)
                     }
-                    .background(Color("MAV-LightGray"))
                     .navigationBarTitle("Vonatok")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarBackButtonHidden(true)

@@ -38,17 +38,17 @@ struct DetailView: View {
                     
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                   height: UIScreen.main.bounds.size.height * 0.85)
+                   height: UIScreen.main.bounds.size.height * 0.8)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
             .padding(.bottom, 150)
-            .offset(y: 60)
+            .offset(y: 80)
             
         }
         .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
         .background(Color("MAV-LightGray"))
-        .navigationBarTitle("")
+        .navigationBarTitle("Részletek")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:

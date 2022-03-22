@@ -8,7 +8,7 @@
 import Foundation
 
 struct Favorite: Codable, Identifiable {
-    let id = UUID()
+    var id = UUID()
     let from: String
     let dep: String
     let depReal: String

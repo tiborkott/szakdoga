@@ -14,32 +14,8 @@ struct ElviraApp: App {
         WindowGroup {
             HomeView()
                 .fullScreenCover(isPresented: $onboarding , content: {
-                    OnboardView(onboarding: $onboarding)
+                    BoardingView(onboarding: $onboarding)
                 })
         }
     }
 }
-
-struct OnboardView: View{
-    @Binding var onboarding: Bool
-    var body: some View{
-        TabView{
-            
-            VStack {
-                Text("ONBOARD")
-            }
-            
-            VStack {
-                Text("ONBOARD")
-            }
-            
-            VStack {
-                Text("ONBOARD")
-                Button("Kész") {
-                    onboarding = false
-                }
-            }
-        }.tabViewStyle(PageTabViewStyle())
-    }
-}
-

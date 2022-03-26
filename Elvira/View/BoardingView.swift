@@ -40,6 +40,7 @@ struct BoardingView: View {
                 
                 HStack(alignment: .center, spacing: 0.0) {
                     Image(systemName: "train.side.front.car").foregroundColor(Color("MAV-Blue"))
+                        .padding(.leading, 30)
                     Text("  Vonat menetrend")
                         .tint(Color("MAV-Black"))
                     Spacer()
@@ -48,19 +49,23 @@ struct BoardingView: View {
                 
                 HStack {
                     Image(systemName: "heart.fill").foregroundColor(Color("MAV-Blue"))
+                        .padding(.leading, 30)
                     Text("  Kedvenc vonatok mentése")
                         .tint(Color("MAV-Black"))
                     Spacer()
                 }
                 .padding(.all)
+              
                 
                 HStack {
                     Image(systemName: "alarm.fill").foregroundColor(Color("MAV-Blue"))
+                        .padding(.leading, 30)
                     Text("  Értesítések az induláshoz")
                         .tint(Color("MAV-Black"))
                     Spacer()
                 }
                 .padding(.all)
+                
                
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,

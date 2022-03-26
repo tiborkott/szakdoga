@@ -21,7 +21,7 @@ struct TrainView: View {
                 HStack {
                     VStack{
                         Image(systemName: "train.side.front.car").foregroundColor({
-                            if(timetable.details[0].trainInfo!.info.contains("gyors")){
+                            if(timetable.type == "fast"){
                                 return Color.red
                             }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
                                 return Color.green
@@ -31,16 +31,22 @@ struct TrainView: View {
                                 return Color("MAV-Black")
                             }
                         }())
-                            .padding(10)
+                        .padding(.leading, 10)
+                        .padding(.top, 16)
+                        
+                        Spacer()
+                        
+                        
                         Button () {
                             
                         }label: {
                             Image(systemName: "heart").foregroundColor(Color("MAV-Black"))
-                                .padding(10)
+                                .padding(.leading, 10)
+                                .padding(.bottom, 20)
                         }
                        
             
-                        Spacer()
+                       
                     }
                     
                         

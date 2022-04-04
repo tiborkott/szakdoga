@@ -10,6 +10,7 @@ import SwiftUI
 struct FavoriteView: View {
     @State private var when = Date.now
     
+
     var body: some View {
         VStack{
             HStack {

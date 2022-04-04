@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct StationList {
-    let stations = [
+let stations = [
         "Aba",
         "Abádszalók",
         "Abaliget",
@@ -1465,10 +1464,10 @@ struct StationList {
         "Hajdúböszörmény",
         "Zichyújfalu",
         "Zirc",
+        "Zugló",
         "Csurgó",
         "Budapest XIV. kerülete",
         "Kistarcsa",
         "Gönc"
-    ]
+]
     
-}

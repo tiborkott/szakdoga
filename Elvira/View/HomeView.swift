@@ -11,10 +11,8 @@ struct HomeView: View {
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false){
-                    SearchView()
-                    .offset(y: 30)
-                    FavoritesView()
-                    .offset(y: 30)
+                SearchView()//.offset(y: 30)
+                FavoritesView()//.offset(y: 30)
             }
             .background(Color("MAV-LightGray"))
             

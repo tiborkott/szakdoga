@@ -42,7 +42,7 @@ struct SearchView: View {
                         .foregroundColor(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .padding(.bottom, 20)
-                    }
+                }.disabled(!searchViewModel.isSreachable())
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
                     height: UIScreen.main.bounds.size.height * 0.5)

@@ -8,28 +8,23 @@
 import SwiftUI
 
 struct TrainView: View {
+    @ObservedObject var trainViewModel = TrainViewModel()
+    @ObservedObject var favoritesViewModel = FavoritesViewModel()
+    
     var from: String
     var fromtime: String
     var to: String
     var totime: String
     var timetable: Timetable
-
+    
+    
+    
     var body: some View {
             VStack {
-                //Text(details[0].trainInfo?.info.components(separatedBy:" ")[0] ?? " ")
-
                 HStack {
                     VStack{
                         Image(systemName: "train.side.front.car").foregroundColor({
-                            if(timetable.type == "fast"){
-                                return Color.red
-                            }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
-                                return Color.green
-                            }else if(timetable.details[0].trainInfo!.info.contains("IC")){
-                                return Color.blue
-                            }else{
-                                return Color("MAV-Black")
-                            }
+                            trainViewModel.trainTypeColor(timetable: timetable)
                         }())
                         .padding(.leading, 10)
                         .padding(.top, 16)
@@ -38,15 +33,13 @@ struct TrainView: View {
                         
                         
                         Button () {
-                            
+                            // Kedvencek listához adó function
+                            //favoritesViewModel.addFavorite(favorite: Favorite())
                         }label: {
                             Image(systemName: "heart").foregroundColor(Color("MAV-Black"))
                                 .padding(.leading, 10)
                                 .padding(.bottom, 20)
-                        }
-                       
-            
-                       
+                        }                       
                     }
                     
                         

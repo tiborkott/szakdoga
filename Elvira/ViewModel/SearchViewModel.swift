@@ -8,10 +8,42 @@
 import Foundation
 
 class SearchViewModel: ObservableObject{
-    @Published var from: String = ""
-    @Published var to: String = ""
-    @Published var fromSearch: String = ""
-    @Published var toSearch: String = ""
     
+    var fromBool = false
+    var toBool = false
+   
+    @Published
+    var from: String = "" {
+        didSet {
+            if stations.contains(self.from){
+                fromBool = true
+            }else {
+                toBool = false
+            }
+        }
+    }
     
+    @Published
+    var to: String = ""{
+        didSet {
+            if stations.contains(self.to){
+                print("Most mar jo")
+                toBool = true
+            }else {
+                toBool = false
+            }
+        }
+    }
+    
+    @Published
+    var fromSearch: String = ""
+    
+    @Published
+    var toSearch: String = ""
+    
+    func isSreachable () -> Bool {
+        return fromBool && toBool
+    }
 }
+
+

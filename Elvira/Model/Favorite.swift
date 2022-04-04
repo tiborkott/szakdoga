@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct Favorite: Codable, Identifiable {
     var id = UUID()
     let name: String

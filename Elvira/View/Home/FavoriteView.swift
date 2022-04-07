@@ -72,8 +72,7 @@ struct FavoriteView: View {
             DatePicker("Értesítés ennyivel korábban:", selection: $when, displayedComponents: .hourAndMinute)
                 .padding(10)
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.85,
-                height: UIScreen.main.bounds.size.height * 0.5)
+        .frame(width: UIScreen.main.bounds.size.width * 0.85)
         .background(Color("MAV-White"))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(radius: 5)

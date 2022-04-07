@@ -605,6 +605,8 @@ let stations = [
         "Kecskemét",
         "Kék",
         "Kelebia",
+        "Kelenföld",
+        "KÖKI","Köki", "Kőbánya-Kispest",
         "Szabadka",
         "Budapest",
         "Budapest",

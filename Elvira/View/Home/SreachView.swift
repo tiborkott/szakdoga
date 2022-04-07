@@ -30,9 +30,9 @@ struct SearchView: View {
                                             
                 TextField("Hova?",text: $searchViewModel.to)
                     .padding()
+                    .padding(.bottom, 50)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                Spacer()
+                    
                 
                 NavigationLink(destination: TrainListView(from: searchViewModel.from, to: searchViewModel.to)) {
                     Text("Keresés")
@@ -53,8 +53,7 @@ struct SearchView: View {
                 
                 
             }
-            .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                    height: UIScreen.main.bounds.size.height * 0.5)
+            .frame(width: UIScreen.main.bounds.size.width * 0.9)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
             .shadow(radius: 10)

@@ -913,6 +913,7 @@ let stations = [
         "Nyíregyháza",
         "Nyíregyháza",
         "Nyírgelse",
+        "Nyugati",
         "Sümeg",
         "Nyírmada",
         "Nyírmeggyes",

@@ -10,14 +10,14 @@ import SwiftUI
 
 struct TrainListView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var trainListViewModel = TrainListViewModel()
+    @EnvironmentObject var trainListViewModel: TrainListViewModel
     
     var from: String
     var to: String
     
 
     var body: some View {
-        VStack{
+        ZStack{
             if(trainListViewModel.loaded == true){
                 ScrollView(showsIndicators: false){
                     ForEach(trainListViewModel.timetables?.timetable ?? []){ timetable in
@@ -28,8 +28,6 @@ struct TrainListView: View {
                                   timetable: timetable
                         )
                         .padding(10)
-                        
-                        
                     }
                 }
                  .background(Color("MAV-LightGray"))
@@ -43,24 +41,24 @@ struct TrainListView: View {
                                 Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
                          })
             }else{
-                ProgressView(value: 0.3)
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
-                    .background(Color("MAV-LightGray"))
-                    .onAppear(){
-                        trainListViewModel.fetchElvira(from: from, to: to)
-                    }
-                    .navigationBarTitle("Vonatok")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarItems(leading:
-                                Button(action: {
-                                   self.presentationMode.wrappedValue.dismiss()
-                                }) {
-                                   Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
-                            })
-                    
+                VStack{
+                    ProgressView(value: 0.3)
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
+                        .navigationBarTitle("Vonatok")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading:
+                                    Button(action: {
+                                       self.presentationMode.wrappedValue.dismiss()
+                                    }) {
+                                       Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
+                        })
+                }
+                .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+                .background(Color("MAV-LightGray"))
             }
         }
+        
     }
 }
 

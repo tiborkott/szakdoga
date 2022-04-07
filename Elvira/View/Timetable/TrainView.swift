@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct TrainView: View {
-    @ObservedObject var trainViewModel = TrainViewModel()
-    @ObservedObject var favoritesViewModel = FavoritesViewModel()
-    
+    @EnvironmentObject var trainListViewModel: TrainListViewModel
+    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
     var from: String
     var fromtime: String
     var to: String
@@ -24,22 +23,29 @@ struct TrainView: View {
                 HStack {
                     VStack{
                         Image(systemName: "train.side.front.car").foregroundColor({
-                            trainViewModel.trainTypeColor(timetable: timetable)
+                            trainListViewModel.trainTypeColor(timetable: timetable)
                         }())
                         .padding(.leading, 10)
-                        .padding(.top, 16)
+                        .padding(.top, 12)
                         
                         Spacer()
                         
                         
                         Button () {
-                            // Kedvencek listához adó function
-                            //favoritesViewModel.addFavorite(favorite: Favorite())
+                            favoritesViewModel.addFavorite(favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0))
                         }label: {
-                            Image(systemName: "heart").foregroundColor(Color("MAV-Black"))
-                                .padding(.leading, 10)
-                                .padding(.bottom, 20)
-                        }                       
+                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0)){
+                                Image(systemName: "heart.fill").foregroundColor(Color.red)
+                                    .padding(.leading, 10)
+                                    .padding(.bottom, 24)
+                            }else{
+                                Image(systemName: "heart").foregroundColor(Color("MAV-Black"))
+                                    .padding(.leading, 10)
+                                    .padding(.bottom, 24)
+                            }
+                            
+                           
+                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0)))
                     }
                     
                         
@@ -63,7 +69,7 @@ struct TrainView: View {
                     .padding(10)
                     
                     VStack{
-                        NavigationLink(destination: DetailView(details: timetable.details)){
+                        NavigationLink(destination: DetailView(timetable: timetable)){
                             Image(systemName: "chevron.right").foregroundColor(Color("MAV-Blue"))
                         }
                         .padding(10)

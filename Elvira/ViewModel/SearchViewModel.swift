@@ -12,8 +12,7 @@ class SearchViewModel: ObservableObject{
     var fromBool = false
     var toBool = false
    
-    @Published
-    var from: String = "" {
+    @Published var from: String = "" {
         didSet {
             if stations.contains(self.from){
                 fromBool = true
@@ -23,8 +22,7 @@ class SearchViewModel: ObservableObject{
         }
     }
     
-    @Published
-    var to: String = ""{
+    @Published var to: String = ""{
         didSet {
             if stations.contains(self.to){
                 print("Most mar jo")
@@ -34,12 +32,6 @@ class SearchViewModel: ObservableObject{
             }
         }
     }
-    
-    @Published
-    var fromSearch: String = ""
-    
-    @Published
-    var toSearch: String = ""
     
     func isSreachable () -> Bool {
         return fromBool && toBool

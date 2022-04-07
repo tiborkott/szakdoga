@@ -11,6 +11,7 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var searchViewModel = SearchViewModel()
+    @EnvironmentObject var trainListViewModel: TrainListViewModel
     
     var body: some View {
             VStack{
@@ -42,7 +43,15 @@ struct SearchView: View {
                         .foregroundColor(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .padding(.bottom, 20)
-                }.disabled(!searchViewModel.isSreachable())
+                }
+                .simultaneousGesture(TapGesture().onEnded{
+                    trainListViewModel.loaded = false
+                    trainListViewModel.fetchElvira(from: searchViewModel.from, to: searchViewModel.to)
+                    
+                })
+                .disabled(!searchViewModel.isSreachable())
+                
+                
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
                     height: UIScreen.main.bounds.size.height * 0.5)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StationView: View {
     @State var detail : Detail
+    @EnvironmentObject var trainListViewModel: TrainListViewModel
     
     var body: some View {
         VStack{

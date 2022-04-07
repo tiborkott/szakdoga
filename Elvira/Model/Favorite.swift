@@ -7,15 +7,12 @@
 
 import Foundation
 
-
-
 struct Favorite: Codable, Identifiable {
     var id = UUID()
-    let name: String
-    let type: String
-    let from: String
-    let to: String
-    let depReal: String
-    let arrival: String
-    let notifytime: Int
+    var from: String
+    var to: String
+    var department: String
+    var arrival: String
+    var type: String
+    var notification: Int
 }

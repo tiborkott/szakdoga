@@ -12,6 +12,8 @@ class TrainListViewModel: ObservableObject{
     @Published var timetables: Timetables?
     @Published var loaded: Bool = false
     
+   
+    
     func fetchElvira(from: String, to: String){
         let from_url = from.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         let to_url = to.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
@@ -34,11 +36,48 @@ class TrainListViewModel: ObservableObject{
             do{
                 self.timetables = try JSONDecoder().decode(Timetables.self, from: response.data!)
                 self.loaded = true
-                //print(self.timetables!)
             }catch{
                 print(error)
             }
         }
     }
     
+    func alreadyFavorite(favoritesViewModel: FavoritesViewModel, favorite: Favorite) -> Bool{
+        let index = favoritesViewModel.favorites.firstIndex(where: {
+            $0.arrival == favorite.arrival &&
+            $0.department == favorite.department &&
+            $0.from == favorite.from &&
+            $0.to == favorite.to &&
+            $0.type == favorite.type
+        })
+        
+        if index == nil {
+            return false
+        }else{
+            return true
+        }
+    }
+    func trainType(timetable: Timetable) -> String {
+        if(timetable.type == "fast"){
+            return "Gyors"
+        }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
+            return "Sebes"
+        }else if(timetable.details[0].trainInfo!.info.contains("IC")){
+            return "Intercity"
+        }else{
+            return "Zónázó"
+        }
+    }
+    
+    func trainTypeColor(timetable: Timetable) -> Color {
+        if(timetable.type == "fast"){
+            return Color.red
+        }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
+            return Color.green
+        }else if(timetable.details[0].trainInfo!.info.contains("IC")){
+            return Color.blue
+        }else{
+            return Color("MAV-Black")
+        }
+    }
 }

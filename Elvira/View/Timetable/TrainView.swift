@@ -32,9 +32,10 @@ struct TrainView: View {
                         
                         
                         Button () {
-                            favoritesViewModel.addFavorite(favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0))
+                            favoritesViewModel.addFavorite(favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable),notification: Date.now))
+                            favoritesViewModel.setNotifications()
                         }label: {
-                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0)){
+                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Date.now)){
                                 Image(systemName: "heart.fill").foregroundColor(Color.red)
                                     .padding(.leading, 10)
                                     .padding(.bottom, 24)
@@ -45,7 +46,7 @@ struct TrainView: View {
                             }
                             
                            
-                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: 0)))
+                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Date.now)))
                     }
                     
                         

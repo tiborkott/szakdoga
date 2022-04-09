@@ -65,6 +65,7 @@ struct DetailView: View {
                 if timetable.details.count > 2 {
                     Text("Átszállás")
                         .font(.system(size: 16, weight: .bold))
+                        .padding(.top, 10)
     
                     ScrollView(showsIndicators: false){
                         ForEach(timetable.details){ detail in
@@ -78,12 +79,12 @@ struct DetailView: View {
                 
                 Spacer()
             }
-            .frame(width: UIScreen.main.bounds.size.width * 0.9,
-                   height: UIScreen.main.bounds.size.height * 0.8)
+            .frame(width: UIScreen.main.bounds.size.width * 0.9)
+            .frame(minHeight: UIScreen.main.bounds.size.height * 0.8)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
-            .padding(.bottom, 150)
+            .padding(.bottom, 160)
             .offset(y: 50)
             
         }

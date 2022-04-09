@@ -21,8 +21,7 @@ struct StationView: View {
                     .padding(.trailing, 10)
             }
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.8,
-                height: UIScreen.main.bounds.size.height * 0.13)
+        .frame(width: UIScreen.main.bounds.size.width * 0.8,height: UIScreen.main.bounds.size.height * 0.13)
         .background(Color("MAV-White"))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(radius: 5)

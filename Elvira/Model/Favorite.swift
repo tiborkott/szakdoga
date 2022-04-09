@@ -9,10 +9,11 @@ import Foundation
 
 struct Favorite: Codable, Identifiable {
     var id = UUID()
+    var enabled: Bool
     var from: String
     var to: String
     var department: String
     var arrival: String
     var type: String
-    var notification: Int
+    var notification: Date
 }

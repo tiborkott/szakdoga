@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ElviraApp: App {
     @AppStorage ("onboarding") var  onboarding: Bool = true
+   
     var body: some Scene {
         WindowGroup {
             HomeView()

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @AppStorage ("notification") var  notification: Bool = false
     @StateObject var favoritesViewModel = FavoritesViewModel()
     @StateObject var trainListViewModel = TrainListViewModel()
     
@@ -15,7 +16,15 @@ struct HomeView: View {
         NavigationView{
             ScrollView(showsIndicators: false){
                 SearchView().offset(y: 30)
-                FavoritesView().offset(y: 30)
+                FavoritesView(){
+                    FavoritesViewModel.save(favorites: favoritesViewModel.favorites){ result in
+                        if case .failure(let error) = result {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                    
+                }
+                .offset(y: 30)
             }
             
             .background(Color("MAV-LightGray"))
@@ -25,6 +34,21 @@ struct HomeView: View {
         .environmentObject(favoritesViewModel)
         .environmentObject(trainListViewModel)
         .ignoresSafeArea()
+        .onAppear {
+            FavoritesViewModel.load { result in
+                switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let favorites):
+                        favoritesViewModel.favorites = favorites
+                    }
+            }
+            
+            if !notification {
+                favoritesViewModel.requestAuthorization()
+            }
+            
+        }
     }
 }
 

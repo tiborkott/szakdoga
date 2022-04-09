@@ -25,7 +25,6 @@ class SearchViewModel: ObservableObject{
     @Published var to: String = ""{
         didSet {
             if stations.contains(self.to){
-                print("Most mar jo")
                 toBool = true
             }else {
                 toBool = false

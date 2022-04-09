@@ -7,34 +7,18 @@
 
 import SwiftUI
 
-struct CheckToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button {
-            configuration.isOn.toggle()
-        } label: {
-            Label {
-                configuration.label
-            } icon: {
-                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(configuration.isOn ? Color("MAV-Blue") : .secondary)
-                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
-                    .imageScale(.large)
-            }
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-}
 
 struct FavoriteView: View {
-    @State private var when = Date.now
-    @State private var toggle = true
+    @State private var when = Date()
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
-    
-    var favorite: Favorite
+    @State var favorite : Favorite
+    var notification : Binding<Date>
+    var enabled : Binding<Bool>
+   
     var body: some View {
         VStack{
             HStack {
-                Toggle("",isOn: $toggle)
+                Toggle("", isOn: enabled)
                     .toggleStyle(CheckToggleStyle())
                     .labelsHidden()
                     .padding(10)
@@ -69,14 +53,43 @@ struct FavoriteView: View {
                 Text(favorite.arrival)
                     .padding(10)
             }
-            DatePicker("Értesítés ennyivel korábban:", selection: $when, displayedComponents: .hourAndMinute)
+            HStack{
+                
+            }
+          
+            DatePicker("Értesítés ennyivel korábban:", selection: $favorite.notification, displayedComponents: .hourAndMinute)
+                .onChange(of: favorite.notification, perform: { value in
+                    favoritesViewModel.setNotifications()
+                })
                 .padding(10)
+            
+            Spacer()
         }
+        .frame(minHeight: 240)
         .frame(width: UIScreen.main.bounds.size.width * 0.85)
         .background(Color("MAV-White"))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(radius: 5)
         
+    }
+}
+
+
+struct CheckToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button {
+            configuration.isOn.toggle()
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(configuration.isOn ? Color("MAV-Blue") : .secondary)
+                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+                    .imageScale(.large)
+            }
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 

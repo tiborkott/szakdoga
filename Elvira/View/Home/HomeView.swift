@@ -12,6 +12,7 @@ struct HomeView: View {
     @StateObject var favoritesViewModel = FavoritesViewModel()
     @StateObject var trainListViewModel = TrainListViewModel()
     
+    
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false){

@@ -9,9 +9,8 @@ import SwiftUI
 
 
 struct FavoriteView: View {
-    @State private var when = Date()
     @EnvironmentObject var favoritesViewModel: FavoritesViewModel
-    @State var favorite : Favorite
+    var favorite : Favorite
     var notification : Binding<Date>
     var enabled : Binding<Bool>
    
@@ -20,6 +19,9 @@ struct FavoriteView: View {
             HStack {
                 Toggle("", isOn: enabled)
                     .toggleStyle(CheckToggleStyle())
+                    .onChange(of: enabled.wrappedValue, perform: { (value) in
+                        favoritesViewModel.setNotifications()
+                    })
                     .labelsHidden()
                     .padding(10)
                 Spacer()
@@ -58,10 +60,10 @@ struct FavoriteView: View {
             }
           
             DatePicker("Értesítés ennyivel korábban:", selection: notification, displayedComponents: .hourAndMinute)
+                .onChange(of: notification.wrappedValue, perform: { (value) in
+                    favoritesViewModel.setNotifications()
+                })
                 .padding(10)
-            //.onChange(of: favorite.notification, perform: { value in
-            //   favoritesViewModel.setNotifications()
-            //})
             
             Spacer()
         }

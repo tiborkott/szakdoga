@@ -32,10 +32,10 @@ struct TrainView: View {
                         
                         
                         Button () {
-                            favoritesViewModel.addFavorite(favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable),notification: Date.now))
+                            favoritesViewModel.addFavorite(favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable),notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!))
                             favoritesViewModel.setNotifications()
                         }label: {
-                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Date.now)){
+                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!)){
                                 Image(systemName: "heart.fill").foregroundColor(Color.red)
                                     .padding(.leading, 10)
                                     .padding(.bottom, 24)
@@ -46,7 +46,7 @@ struct TrainView: View {
                             }
                             
                            
-                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Date.now)))
+                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!)))
                     }
                     
                         

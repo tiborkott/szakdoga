@@ -63,13 +63,13 @@ class FavoritesViewModel: ObservableObject{
     }
     
     func addFavorite(favorite: Favorite){
-        favorites.append(favorite)
+        self.favorites.append(favorite)
     }
     
     func deleteFavorite(favorite: Favorite){
-        let index = favorites.firstIndex(where: { $0.id == favorite.id })
+        let index = self.favorites.firstIndex(where: { $0.id == favorite.id })
         if index != nil {
-            favorites.remove(at: index!)
+            self.favorites.remove(at: index!)
         }
     }
     
@@ -84,20 +84,28 @@ class FavoritesViewModel: ObservableObject{
     }
     
     func setNotifications(){
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         let content = UNMutableNotificationContent()
-        content.title = "Indulás a vonathoz!"
-        content.subtitle = "Ideje indulni az állomásra. "
+        content.title = "Elvira"
+        content.subtitle = "Indulnjon el időben az állomásra."
         content.sound = UNNotificationSound.default
         
 
-        for favorite in favorites{
+        for favorite in self.favorites{
             if favorite.enabled{
                 var date = DateComponents()
                 let calendar = Calendar.current
                 let departmentHour = favorite.department.components(separatedBy: ":")[0]
                 let departmentMinute = favorite.department.components(separatedBy: ":")[1]
-                date.hour = calendar.component(.hour, from: favorite.notification) //Int(departmentHour)!
-                date.minute = calendar.component(.minute, from: favorite.notification) //Int(departmentMinute)! -
+                date.hour = Int(departmentHour)! - calendar.component(.hour, from: favorite.notification)
+                date.minute = Int(departmentMinute)! - calendar.component(.minute, from: favorite.notification)
+                if(date.minute! < 0){
+                    date.minute = date.minute! + 60
+                }
+                if(date.hour! < 0){
+                    date.hour = date.hour! + 24
+                }
                 print(date.hour ?? "Nincs")
                 print(date.minute ?? "Nincs")
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)

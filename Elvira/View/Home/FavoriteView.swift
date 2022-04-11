@@ -57,11 +57,11 @@ struct FavoriteView: View {
                 
             }
           
-            DatePicker("Értesítés ennyivel korábban:", selection: $favorite.notification, displayedComponents: .hourAndMinute)
-                .onChange(of: favorite.notification, perform: { value in
-                    favoritesViewModel.setNotifications()
-                })
+            DatePicker("Értesítés ennyivel korábban:", selection: notification, displayedComponents: .hourAndMinute)
                 .padding(10)
+            //.onChange(of: favorite.notification, perform: { value in
+            //   favoritesViewModel.setNotifications()
+            //})
             
             Spacer()
         }

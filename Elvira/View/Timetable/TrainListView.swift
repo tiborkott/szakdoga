@@ -45,6 +45,9 @@ struct TrainListView: View {
                     ProgressView(value: 0.3)
                         .progressViewStyle(CircularProgressViewStyle(tint: Color("MAV-Blue")))
                         .navigationBarTitle("Vonatok")
+                        .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height*2)
+                        .ignoresSafeArea()
+                        .background(Color("MAV-LightGray"))
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarBackButtonHidden(true)
                         .navigationBarItems(leading:
@@ -54,8 +57,10 @@ struct TrainListView: View {
                                        Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
                         })
                 }
-                .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
-                .background(Color("MAV-LightGray"))
+                
+
+                
+                
             }
         }
         

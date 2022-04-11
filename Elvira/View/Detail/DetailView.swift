@@ -80,15 +80,16 @@ struct DetailView: View {
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9)
-            .frame(minHeight: UIScreen.main.bounds.size.height * 0.8)
+            .frame(minHeight: UIScreen.main.bounds.size.height * 0.5)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
             .padding(.bottom, 160)
-            .offset(y: 50)
+            .offset(y: 80)
             
         }
-        .frame(width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+        .ignoresSafeArea()
+        .frame(width: UIScreen.main.bounds.size.width)
         .background(Color("MAV-LightGray"))
         .navigationBarTitle("Részletek")
         .navigationBarTitleDisplayMode(.inline)

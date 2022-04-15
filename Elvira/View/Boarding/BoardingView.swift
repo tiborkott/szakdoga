@@ -12,8 +12,6 @@ struct BoardingView: View {
     
     var body: some View{
         TabView{
-            
-            
             VStack {
                 Text("Üdv az Elvira alkalmazásban!")
                     .tint(Color("MAV-Black"))
@@ -102,9 +100,3 @@ struct BoardingView: View {
         .ignoresSafeArea()
     }
 }
-
-//struct BoardingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BoardingView()
-//    }
-//}

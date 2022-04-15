@@ -56,19 +56,9 @@ struct TrainListView: View {
                                     }) {
                                        Image(systemName: "chevron.backward").foregroundColor(Color("MAV-Blue"))
                         })
-                }
-                
-
-                
-                
+                }    
             }
         }
         
     }
 }
-
-//struct TrainList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TrainListView()
-//    }
-//}

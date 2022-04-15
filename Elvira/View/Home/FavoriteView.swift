@@ -94,9 +94,3 @@ struct CheckToggleStyle: ToggleStyle {
         .buttonStyle(PlainButtonStyle())
     }
 }
-
-//struct FavoriteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoriteView()
-//    }
-//}

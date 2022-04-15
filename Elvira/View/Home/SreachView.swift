@@ -26,6 +26,7 @@ struct SearchView: View {
                 TextField("Honnan?",text: $searchViewModel.from)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
                                             
                                             
                 TextField("Hova?",text: $searchViewModel.to)
@@ -47,7 +48,6 @@ struct SearchView: View {
                 .simultaneousGesture(TapGesture().onEnded{
                     trainListViewModel.loaded = false
                     trainListViewModel.fetchElvira(from: searchViewModel.from, to: searchViewModel.to)
-                    
                 })
                 .disabled(!searchViewModel.isSreachable())
                 
@@ -62,11 +62,3 @@ struct SearchView: View {
             .padding(.trailing, UIScreen.main.bounds.size.width * 0.05 )
     }
 }
-
-
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView()
-//    }
-//}
-

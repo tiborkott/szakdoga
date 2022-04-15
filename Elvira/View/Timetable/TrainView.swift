@@ -87,9 +87,3 @@ struct TrainView: View {
         }
     
 }
-
-// TrainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //TrainView()
-//    }
-//}

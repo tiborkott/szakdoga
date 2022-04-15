@@ -60,9 +60,9 @@ struct DetailView: View {
                 Rectangle()
                     .strokeBorder(Color("MAV-Black"), style: StrokeStyle(lineWidth: 2, dash: [10]))
                     .frame(width: UIScreen.main.bounds.size.width * 0.80, height: 2)
-
                 
                 if timetable.details.count > 2 {
+                    
                     Text("Átszállás")
                         .font(.system(size: 16, weight: .bold))
                         .padding(.top, 10)
@@ -76,20 +76,20 @@ struct DetailView: View {
                         }
                     }
                 }
-                
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9)
-            .frame(minHeight: UIScreen.main.bounds.size.height * 0.5)
+            .frame(height: UIScreen.main.bounds.size.height * 0.7)
             .background(Color("MAV-White") )
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
-            .padding(.bottom, 160)
-            .offset(y: 80)
+            .padding(.bottom, 110)
+            
             
         }
         .ignoresSafeArea()
         .frame(width: UIScreen.main.bounds.size.width)
+        .frame(height: UIScreen.main.bounds.size.height)
         .background(Color("MAV-LightGray"))
         .navigationBarTitle("Részletek")
         .navigationBarTitleDisplayMode(.inline)
@@ -102,9 +102,3 @@ struct DetailView: View {
                      })
     }
 }
-
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}

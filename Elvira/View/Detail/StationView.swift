@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct StationView: View {
-    @State var detail : Detail
     @EnvironmentObject var trainListViewModel: TrainListViewModel
+    var detail : Detail
     
     var body: some View {
         VStack{
@@ -27,9 +27,3 @@ struct StationView: View {
         .shadow(radius: 5)
     }
 }
-
-//struct StationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StationView()
-//    }
-//}

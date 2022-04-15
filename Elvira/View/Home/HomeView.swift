@@ -11,6 +11,7 @@ struct HomeView: View {
     @AppStorage ("notification") var  notification: Bool = false
     @StateObject var favoritesViewModel = FavoritesViewModel()
     @StateObject var trainListViewModel = TrainListViewModel()
+    @ObservedObject var networkManeger = NetworkManager()
     
     
     var body: some View {
@@ -27,9 +28,18 @@ struct HomeView: View {
                 }
                 .offset(y: 30)
             }
-            
+            .alert(isPresented: $networkManeger.notConnected){
+                Alert(title: Text("Nincs internet kapcsolat"), message: Text(networkManeger.connectionDescription),  dismissButton: Alert.Button.default(
+                    Text("Ok"), action: {
+                        let settingsURL = URL(string: UIApplication.openSettingsURLString)
+                        UIApplication.shared.canOpenURL(settingsURL!)
+                        UIApplication.shared.open(settingsURL!)
+
+                    })
+                )
+            }
             .background(Color("MAV-LightGray"))
-            
+
         }
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         .environmentObject(favoritesViewModel)
@@ -52,9 +62,3 @@ struct HomeView: View {
         }
     }
 }
-
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//    }
-//}

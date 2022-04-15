@@ -12,6 +12,7 @@
 		1C426FF927D7DDBD0007B0A2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C426FF827D7DDBD0007B0A2 /* DetailView.swift */; };
 		1C48AB7B27E6596200D84286 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB7A27E6596200D84286 /* SearchViewModel.swift */; };
 		1C48AB8127E6941C00D84286 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB8027E6941C00D84286 /* HomeView.swift */; };
+		1C72E5932809ECE3005D8E0B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72E5922809ECE3005D8E0B /* NetworkManager.swift */; };
 		1C800D4F27E901A000AAB8BA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D4E27E901A000AAB8BA /* Favorite.swift */; };
 		1C800D5127E9029F00AAB8BA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5027E9029F00AAB8BA /* FavoritesView.swift */; };
 		1C800D5327E902C000AAB8BA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5227E902C000AAB8BA /* FavoriteView.swift */; };
@@ -52,6 +53,7 @@
 		1C426FF827D7DDBD0007B0A2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1C48AB7A27E6596200D84286 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1C48AB8027E6941C00D84286 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1C72E5922809ECE3005D8E0B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1C800D4E27E901A000AAB8BA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		1C800D5027E9029F00AAB8BA /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		1C800D5227E902C000AAB8BA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -142,11 +144,11 @@
 				1CE0883627D55F69007A4E11 /* Detail.swift */,
 				1CE0883927D55F6A007A4E11 /* DetailService.swift */,
 				1CE0883827D55F69007A4E11 /* DetailTrainInfo.swift */,
-				1CE0883A27D55F6A007A4E11 /* JSONSchemaSupport.swift */,
 				1CE0883B27D55F6A007A4E11 /* Timetable.swift */,
 				1CE0883D27D55F6A007A4E11 /* Timetables.swift */,
 				1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */,
 				1CE0883C27D55F6A007A4E11 /* TrainInfoService.swift */,
+				1CE0883A27D55F6A007A4E11 /* JSONSchemaSupport.swift */,
 			);
 			path = ElviraAPI;
 			sourceTree = "<group>";
@@ -176,6 +178,7 @@
 				1C800D4D27E8FF8500AAB8BA /* ElviraAPI */,
 				1C86B48627DF9F6100301597 /* StationList.swift */,
 				1C800D4E27E901A000AAB8BA /* Favorite.swift */,
+				1C72E5922809ECE3005D8E0B /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */,
 				1CE0884327D55F6A007A4E11 /* Timetable.swift in Sources */,
 				1C800D5127E9029F00AAB8BA /* FavoritesView.swift in Sources */,
+				1C72E5932809ECE3005D8E0B /* NetworkManager.swift in Sources */,
 				1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */,
 				1CE5360227C62361004A8328 /* TrainView.swift in Sources */,
 				1CD9547727EA5B5B0021A385 /* BoardingView.swift in Sources */,

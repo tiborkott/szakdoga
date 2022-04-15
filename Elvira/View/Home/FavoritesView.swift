@@ -46,12 +46,4 @@ struct FavoritesView: View {
         }
         
     }
-    
-    
 }
-
-//struct FavoriteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoriteView()
-//    }
-//}

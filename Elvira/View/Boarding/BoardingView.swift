@@ -13,18 +13,28 @@ struct BoardingView: View {
     var body: some View{
         TabView{
             VStack {
-                Text("Üdv az Elvira alkalmazásban!")
-                    .tint(Color("MAV-Black"))
-                    .font(.title2)
-                    .padding(.top, 30)
-                Spacer()
+                HStack{
+                    Text("Üdv az")
+                        .foregroundColor(Color("MAV-Black"))
+                        .font(.title2)
+                        
+                        
+                    Text("Elvira")
+                        .foregroundColor(Color("MAV-Blue"))
+                        .font(.title2)
+                    
+                    Text("alkalmazásban!")
+                        .foregroundColor(Color("MAV-Black"))
+                        .font(.title2)
+                }
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
                    height: UIScreen.main.bounds.size.height * 0.5)
             .background(Color("MAV-White"))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
-           
+            .tag(Color("MAV-Blue"))
+
             
             VStack {
                 Text("Menetrend egy érintéssel!")
@@ -32,9 +42,10 @@ struct BoardingView: View {
                     .font(.title2)
                     .padding()
                 
-                Divider()
-                    .frame(width: UIScreen.main.bounds.size.width * 0.5)
-                    .background(Color("MAV-Blue"))
+                Rectangle()
+                    .strokeBorder(Color("MAV-Blue"), style: StrokeStyle(lineWidth: 2, dash: [10]))
+                    .frame(width: UIScreen.main.bounds.size.width * 0.64, height: 2)
+                
                 
                 HStack(alignment: .center, spacing: 0.0) {
                     Image(systemName: "train.side.front.car").foregroundColor(Color("MAV-Blue"))
@@ -63,8 +74,6 @@ struct BoardingView: View {
                     Spacer()
                 }
                 .padding(.all)
-                
-               
             }
             .frame(width: UIScreen.main.bounds.size.width * 0.9,
                    height: UIScreen.main.bounds.size.height * 0.5)
@@ -95,8 +104,9 @@ struct BoardingView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .shadow(radius: 5)
         }
-        .tabViewStyle(PageTabViewStyle())
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .background(Color("MAV-LightGray"))
         .ignoresSafeArea()
     }
 }
+

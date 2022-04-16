@@ -26,10 +26,9 @@ struct TrainView: View {
                             trainListViewModel.trainTypeColor(timetable: timetable)
                         }())
                         .padding(.leading, 10)
-                        .padding(.top, 12)
-                        
-                        Spacer()
-                        
+                        .padding(.top, 16)
+                        .padding(.bottom, 16)
+                       
                         
                         Button () {
                             favoritesViewModel.addFavorite(favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable),notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!))
@@ -47,6 +46,8 @@ struct TrainView: View {
                             
                            
                         }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!)))
+                        
+                        Spacer()
                     }
                     
                         

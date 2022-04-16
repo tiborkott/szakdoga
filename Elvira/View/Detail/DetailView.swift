@@ -51,7 +51,8 @@ struct DetailView: View {
                 HStack{
                     Image(systemName: "wallet.pass").foregroundColor(Color("MAV-Blue"))
                     Text("Osztály:")
-                    Text(timetable.className)
+                    Text(timetable.className.components(separatedBy:".")[0]+".")
+                    Text(timetable.className.components(separatedBy:".")[1]+".")
                     Spacer()
                 }
                 .padding(.leading, 20)

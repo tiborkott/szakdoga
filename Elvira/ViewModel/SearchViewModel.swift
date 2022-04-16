@@ -9,8 +9,8 @@ import Foundation
 
 class SearchViewModel: ObservableObject{
     
-    var fromBool = true
-    var toBool = true
+    var fromBool = false
+    var toBool = false
    
     @Published var from: String = "" {
         didSet {

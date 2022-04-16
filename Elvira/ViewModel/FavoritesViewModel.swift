@@ -11,6 +11,21 @@ import UserNotifications
 class FavoritesViewModel: ObservableObject{
     @Published var favorites: [Favorite]
     
+    init(){
+        favorites = []
+    }
+    
+    func addFavorite(favorite: Favorite){
+        self.favorites.append(favorite)
+    }
+    
+    func deleteFavorite(favorite: Favorite){
+        let index = self.favorites.firstIndex(where: { $0.id == favorite.id })
+        if index != nil {
+            self.favorites.remove(at: index!)
+        }
+    }
+    
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,in: .userDomainMask,appropriateFor: nil,create: false)
             .appendingPathComponent("favorites.data")
@@ -58,25 +73,10 @@ class FavoritesViewModel: ObservableObject{
         }
     }
     
-    init(){
-        favorites = []
-    }
-    
-    func addFavorite(favorite: Favorite){
-        self.favorites.append(favorite)
-    }
-    
-    func deleteFavorite(favorite: Favorite){
-        let index = self.favorites.firstIndex(where: { $0.id == favorite.id })
-        if index != nil {
-            self.favorites.remove(at: index!)
-        }
-    }
-    
     func requestAuthorization(){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
-                print("All set!")
+                //print("All set!")
             } else if let error = error {
                 print(error.localizedDescription)
             }

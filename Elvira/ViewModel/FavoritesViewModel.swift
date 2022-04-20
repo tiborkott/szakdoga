@@ -106,8 +106,7 @@ class FavoritesViewModel: ObservableObject{
                 if(date.hour! < 0){
                     date.hour = date.hour! + 24
                 }
-                print(date.hour ?? "Nincs")
-                print(date.minute ?? "Nincs")
+                
                 let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
                 
                 let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

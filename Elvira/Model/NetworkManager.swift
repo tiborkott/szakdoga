@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+
 class NetworkManager: ObservableObject {
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "NetworkManager")
@@ -20,7 +21,6 @@ class NetworkManager: ObservableObject {
     }
     
     init(){
-        
         monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {
                 self.notConnected = path.status == .unsatisfied

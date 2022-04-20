@@ -9,9 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     @AppStorage ("notification") var  notification: Bool = false
+    @ObservedObject var networkManeger = NetworkManager()
     @StateObject var favoritesViewModel = FavoritesViewModel()
     @StateObject var trainListViewModel = TrainListViewModel()
-    @ObservedObject var networkManeger = NetworkManager()
+   
     
     
     var body: some View {

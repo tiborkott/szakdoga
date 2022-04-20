@@ -16,4 +16,21 @@ struct Favorite: Codable, Identifiable {
     var arrival: String
     var type: String
     var notification: Date
+    
+    init(enabled: Bool = false,
+         from: String,
+         to: String,
+         department: String,
+         arrival: String,
+         type: String,
+         notification: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+    ){
+        self.enabled = enabled
+        self.from = from
+        self.to = to
+        self.department = department
+        self.arrival = arrival
+        self.type = type
+        self.notification = notification
+    }
 }

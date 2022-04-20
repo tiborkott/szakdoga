@@ -5,7 +5,6 @@
 //  Created by Kött Tibor on 2022. 03. 07..
 //
 
-import SwiftUI
 import Alamofire
 
 class TrainListViewModel: ObservableObject{
@@ -39,6 +38,7 @@ class TrainListViewModel: ObservableObject{
         }
     }
     
+    
     func alreadyFavorite(favoritesViewModel: FavoritesViewModel, favorite: Favorite) -> Bool{
         let index = favoritesViewModel.favorites.firstIndex(where: {
             $0.arrival == favorite.arrival &&
@@ -65,16 +65,5 @@ class TrainListViewModel: ObservableObject{
             return "Zónázó"
         }
     }
-    
-    func trainTypeColor(timetable: Timetable) -> Color {
-        if(timetable.type == "fast"){
-            return Color.red
-        }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
-            return Color.green
-        }else if(timetable.details[0].trainInfo!.info.contains("IC")){
-            return Color.blue
-        }else{
-            return Color("MAV-Black")
-        }
-    }
+
 }

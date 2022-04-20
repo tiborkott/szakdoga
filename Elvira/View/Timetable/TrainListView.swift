@@ -11,7 +11,6 @@ import SwiftUI
 struct TrainListView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var trainListViewModel: TrainListViewModel
-    
     var from: String
     var to: String
     

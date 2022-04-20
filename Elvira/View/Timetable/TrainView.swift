@@ -17,13 +17,12 @@ struct TrainView: View {
     var timetable: Timetable
     
     
-    
     var body: some View {
             VStack {
                 HStack {
                     VStack{
                         Image(systemName: "train.side.front.car").foregroundColor({
-                            trainListViewModel.trainTypeColor(timetable: timetable)
+                            trainTypeColor(timetable: timetable)
                         }())
                         .padding(.leading, 10)
                         .padding(.top, 16)
@@ -31,10 +30,10 @@ struct TrainView: View {
                        
                         
                         Button () {
-                            favoritesViewModel.addFavorite(favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable),notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!))
+                            favoritesViewModel.addFavorite(favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable)))
                             favoritesViewModel.setNotifications()
                         }label: {
-                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!)){
+                            if trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from,to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable))){
                                 Image(systemName: "heart.fill").foregroundColor(Color.red)
                                     .padding(.leading, 10)
                                     .padding(.bottom, 24)
@@ -45,7 +44,7 @@ struct TrainView: View {
                             }
                             
                            
-                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(enabled: false, from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable), notification: Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!)))
+                        }.disabled(trainListViewModel.alreadyFavorite(favoritesViewModel: favoritesViewModel, favorite: Favorite(from: from, to: to,department: fromtime,arrival: totime,type: trainListViewModel.trainType(timetable: timetable))))
                         
                         Spacer()
                     }
@@ -87,4 +86,16 @@ struct TrainView: View {
             .shadow(radius: 5)
         }
     
+}
+
+func trainTypeColor(timetable: Timetable) -> Color {
+    if(timetable.type == "fast"){
+        return Color.red
+    }else if(timetable.details[0].trainInfo!.info.contains("sebes")){
+        return Color.green
+    }else if(timetable.details[0].trainInfo!.info.contains("IC")){
+        return Color.blue
+    }else{
+        return Color("MAV-Black")
+    }
 }

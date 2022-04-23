@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2068BD281149A1006D35AD /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */; };
+		1C2068BE281149AA006D35AD /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D4E27E901A000AAB8BA /* Favorite.swift */; };
+		1C2068BF281149AF006D35AD /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5027E9029F00AAB8BA /* FavoritesView.swift */; };
+		1C2068C0281149B1006D35AD /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5227E902C000AAB8BA /* FavoriteView.swift */; };
 		1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C6EEF27E7C3BE005E8641 /* StationView.swift */; };
 		1C312C53280AF8FD00C8982C /* ElviraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C312C52280AF8FD00C8982C /* ElviraUITests.swift */; };
 		1C312C55280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C312C54280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift */; };
+		1C37CC1C28107D5D0088E7E1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC03281066A50088E7E1 /* WidgetKit.framework */; };
+		1C37CC1D28107D5D0088E7E1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC05281066A50088E7E1 /* SwiftUI.framework */; };
+		1C37CC2028107D5D0088E7E1 /* ElviraWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CC1F28107D5D0088E7E1 /* ElviraWidget.swift */; };
+		1C37CC2228107D610088E7E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C37CC2128107D610088E7E1 /* Assets.xcassets */; };
+		1C37CC2628107D610088E7E1 /* ElviraWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C39430327D69B79003D2E0F /* TrainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39430227D69B79003D2E0F /* TrainListViewModel.swift */; };
 		1C426FF927D7DDBD0007B0A2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C426FF827D7DDBD0007B0A2 /* DetailView.swift */; };
 		1C48AB7B27E6596200D84286 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB7A27E6596200D84286 /* SearchViewModel.swift */; };
@@ -18,7 +27,9 @@
 		1C800D4F27E901A000AAB8BA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D4E27E901A000AAB8BA /* Favorite.swift */; };
 		1C800D5127E9029F00AAB8BA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5027E9029F00AAB8BA /* FavoritesView.swift */; };
 		1C800D5327E902C000AAB8BA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5227E902C000AAB8BA /* FavoriteView.swift */; };
+		1C842E23281314D000F49C44 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C842E22281314D000F49C44 /* Search.swift */; };
 		1C86B48727DF9F6100301597 /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86B48627DF9F6100301597 /* StationList.swift */; };
+		1C9638132814292C00482504 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9638122814292C00482504 /* HistoryView.swift */; };
 		1CA2F753280243D600723880 /* ElviraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA2F752280243D600723880 /* ElviraTests.swift */; };
 		1CACE56627FD8D5F002B4FD3 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */; };
 		1CD9547727EA5B5B0021A385 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9547627EA5B5B0021A385 /* BoardingView.swift */; };
@@ -47,6 +58,13 @@
 			remoteGlobalIDString = 1CE83D8127BA8B38003E8982;
 			remoteInfo = Elvira;
 		};
+		1C37CC2428107D610088E7E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C37CC1A28107D5D0088E7E1;
+			remoteInfo = ElviraWidgetExtension;
+		};
 		1CA2F754280243D600723880 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
@@ -56,20 +74,44 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1C37CC13281066A70088E7E1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1C37CC2628107D610088E7E1 /* ElviraWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1C2C6EEF27E7C3BE005E8641 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElviraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C312C52280AF8FD00C8982C /* ElviraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraUITests.swift; sourceTree = "<group>"; };
 		1C312C54280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1C37CC03281066A50088E7E1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1C37CC05281066A50088E7E1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ElviraWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C37CC1F28107D5D0088E7E1 /* ElviraWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraWidget.swift; sourceTree = "<group>"; };
+		1C37CC2128107D610088E7E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C37CC2328107D610088E7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C39430227D69B79003D2E0F /* TrainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListViewModel.swift; sourceTree = "<group>"; };
 		1C426FF827D7DDBD0007B0A2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1C48AB7A27E6596200D84286 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1C48AB8027E6941C00D84286 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1C5FF1BF2812E3A800F1EB66 /* Elvira.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Elvira.entitlements; sourceTree = "<group>"; };
+		1C5FF1C02812E4B000F1EB66 /* ElviraWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElviraWidgetExtension.entitlements; sourceTree = "<group>"; };
 		1C72E5922809ECE3005D8E0B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1C800D4E27E901A000AAB8BA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		1C800D5027E9029F00AAB8BA /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		1C800D5227E902C000AAB8BA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		1C842E22281314D000F49C44 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		1C86B48627DF9F6100301597 /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		1C9638122814292C00482504 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		1CA2F750280243D600723880 /* ElviraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElviraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA2F752280243D600723880 /* ElviraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraTests.swift; sourceTree = "<group>"; };
 		1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +144,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C37CC1828107D5D0088E7E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C37CC1D28107D5D0088E7E1 /* SwiftUI.framework in Frameworks */,
+				1C37CC1C28107D5D0088E7E1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CA2F74D280243D600723880 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +178,16 @@
 				1C312C54280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift */,
 			);
 			path = ElviraUITests;
+			sourceTree = "<group>";
+		};
+		1C37CC1E28107D5D0088E7E1 /* ElviraWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1C37CC1F28107D5D0088E7E1 /* ElviraWidget.swift */,
+				1C37CC2128107D610088E7E1 /* Assets.xcassets */,
+				1C37CC2328107D610088E7E1 /* Info.plist */,
+			);
+			path = ElviraWidget;
 			sourceTree = "<group>";
 		};
 		1C4A0F1027FCAD2E00054BC9 /* Boarding */ = {
@@ -181,6 +242,14 @@
 			path = ElviraAPI;
 			sourceTree = "<group>";
 		};
+		1C9638142814354200482504 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				1C9638122814292C00482504 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		1CA2F751280243D600723880 /* ElviraTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +261,7 @@
 		1CE535FE27C6225D004A8328 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C9638142814354200482504 /* History */,
 				1C4A0F1427FCADFC00054BC9 /* Detail */,
 				1C4A0F1327FCAD6E00054BC9 /* Timetable */,
 				1C4A0F1127FCAD3C00054BC9 /* Home */,
@@ -206,6 +276,7 @@
 				1C800D4D27E8FF8500AAB8BA /* ElviraAPI */,
 				1C86B48627DF9F6100301597 /* StationList.swift */,
 				1C800D4E27E901A000AAB8BA /* Favorite.swift */,
+				1C842E22281314D000F49C44 /* Search.swift */,
 				1C72E5922809ECE3005D8E0B /* NetworkManager.swift */,
 			);
 			path = Model;
@@ -224,7 +295,9 @@
 		1CE83D7927BA8B38003E8982 = {
 			isa = PBXGroup;
 			children = (
+				1C5FF1C02812E4B000F1EB66 /* ElviraWidgetExtension.entitlements */,
 				1CE83D8427BA8B38003E8982 /* Elvira */,
+				1C37CC1E28107D5D0088E7E1 /* ElviraWidget */,
 				1CA2F751280243D600723880 /* ElviraTests */,
 				1C312C51280AF8FD00C8982C /* ElviraUITests */,
 				1CE83D8327BA8B38003E8982 /* Products */,
@@ -239,6 +312,7 @@
 				1CE83D8227BA8B38003E8982 /* Elvira.app */,
 				1CA2F750280243D600723880 /* ElviraTests.xctest */,
 				1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */,
+				1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,6 +320,7 @@
 		1CE83D8427BA8B38003E8982 /* Elvira */ = {
 			isa = PBXGroup;
 			children = (
+				1C5FF1BF2812E3A800F1EB66 /* Elvira.entitlements */,
 				1CE5360527C624A3004A8328 /* Model */,
 				1CE5360927C62536004A8328 /* ViewModel */,
 				1CE535FE27C6225D004A8328 /* View */,
@@ -277,6 +352,8 @@
 			isa = PBXGroup;
 			children = (
 				8407FC9E1A8D754C81D73951 /* Pods_Elvira.framework */,
+				1C37CC03281066A50088E7E1 /* WidgetKit.framework */,
+				1C37CC05281066A50088E7E1 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +378,23 @@
 			productName = ElviraUITests;
 			productReference = 1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C37CC2728107D610088E7E1 /* Build configuration list for PBXNativeTarget "ElviraWidgetExtension" */;
+			buildPhases = (
+				1C37CC1728107D5D0088E7E1 /* Sources */,
+				1C37CC1828107D5D0088E7E1 /* Frameworks */,
+				1C37CC1928107D5D0088E7E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ElviraWidgetExtension;
+			productName = ElviraWidgetExtension;
+			productReference = 1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		1CA2F74F280243D600723880 /* ElviraTests */ = {
 			isa = PBXNativeTarget;
@@ -329,10 +423,12 @@
 				1CE83D7F27BA8B38003E8982 /* Frameworks */,
 				1CE83D8027BA8B38003E8982 /* Resources */,
 				188EA8248BB2CF2FCF901544 /* [CP] Embed Pods Frameworks */,
+				1C37CC13281066A70088E7E1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1C37CC2528107D610088E7E1 /* PBXTargetDependency */,
 			);
 			name = Elvira;
 			productName = Elvira;
@@ -352,6 +448,9 @@
 					1C312C4F280AF8FD00C8982C = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 1CE83D8127BA8B38003E8982;
+					};
+					1C37CC1A28107D5D0088E7E1 = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 					1CA2F74F280243D600723880 = {
 						CreatedOnToolsVersion = 13.3;
@@ -378,6 +477,7 @@
 				1CE83D8127BA8B38003E8982 /* Elvira */,
 				1CA2F74F280243D600723880 /* ElviraTests */,
 				1C312C4F280AF8FD00C8982C /* ElviraUITests */,
+				1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -387,6 +487,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C37CC1928107D5D0088E7E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C37CC2228107D610088E7E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +568,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C37CC1728107D5D0088E7E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C2068BE281149AA006D35AD /* Favorite.swift in Sources */,
+				1C2068C0281149B1006D35AD /* FavoriteView.swift in Sources */,
+				1C2068BF281149AF006D35AD /* FavoritesView.swift in Sources */,
+				1C37CC2028107D5D0088E7E1 /* ElviraWidget.swift in Sources */,
+				1C2068BD281149A1006D35AD /* FavoritesViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1CA2F74C280243D600723880 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,11 +609,13 @@
 				1CE5360227C62361004A8328 /* TrainView.swift in Sources */,
 				1CD9547727EA5B5B0021A385 /* BoardingView.swift in Sources */,
 				1CE0884427D55F6A007A4E11 /* TrainInfoService.swift in Sources */,
+				1C9638132814292C00482504 /* HistoryView.swift in Sources */,
 				1C800D5327E902C000AAB8BA /* FavoriteView.swift in Sources */,
 				1C800D4F27E901A000AAB8BA /* Favorite.swift in Sources */,
 				1CE0884027D55F6A007A4E11 /* DetailTrainInfo.swift in Sources */,
 				1CE0884527D55F6A007A4E11 /* Timetables.swift in Sources */,
 				1CACE56627FD8D5F002B4FD3 /* FavoritesViewModel.swift in Sources */,
+				1C842E23281314D000F49C44 /* Search.swift in Sources */,
 				1CE5360027C6226E004A8328 /* SreachView.swift in Sources */,
 				1CE5360427C62474004A8328 /* TrainListView.swift in Sources */,
 			);
@@ -506,6 +628,11 @@
 			isa = PBXTargetDependency;
 			target = 1CE83D8127BA8B38003E8982 /* Elvira */;
 			targetProxy = 1C312C56280AF8FD00C8982C /* PBXContainerItemProxy */;
+		};
+		1C37CC2528107D610088E7E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */;
+			targetProxy = 1C37CC2428107D610088E7E1 /* PBXContainerItemProxy */;
 		};
 		1CA2F755280243D600723880 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -548,6 +675,64 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Elvira;
+			};
+			name = Release;
+		};
+		1C37CC2828107D610088E7E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ElviraWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElviraWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ElviraWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.Elvira.ElviraWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C37CC2928107D610088E7E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ElviraWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ElviraWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ElviraWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.Elvira.ElviraWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -709,8 +894,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 419B02DDAB36893FB2ED0750 /* Pods-Elvira.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Elvira/Elvira.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elvira/Preview Content\"";
@@ -741,8 +928,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44D93A73BA93E64D3B6E6DBF /* Pods-Elvira.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Elvira/Elvira.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Elvira/Preview Content\"";
@@ -777,6 +966,15 @@
 			buildConfigurations = (
 				1C312C58280AF8FD00C8982C /* Debug */,
 				1C312C59280AF8FD00C8982C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C37CC2728107D610088E7E1 /* Build configuration list for PBXNativeTarget "ElviraWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C37CC2828107D610088E7E1 /* Debug */,
+				1C37CC2928107D610088E7E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

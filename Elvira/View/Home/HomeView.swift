@@ -12,13 +12,20 @@ struct HomeView: View {
     @ObservedObject var networkManeger = NetworkManager()
     @StateObject var favoritesViewModel = FavoritesViewModel()
     @StateObject var trainListViewModel = TrainListViewModel()
-   
+    @StateObject var searchViewModel = SearchViewModel()
     
     
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false){
-                SearchView().offset(y: 30)
+                SearchView(){
+                    SearchViewModel.save(history: Array(searchViewModel.history)){ result in
+                        if case .failure(let error) = result {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                }
+                    .offset(y: 30)
                 FavoritesView(){
                     FavoritesViewModel.save(favorites: favoritesViewModel.favorites){ result in
                         if case .failure(let error) = result {
@@ -45,6 +52,7 @@ struct HomeView: View {
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         .environmentObject(favoritesViewModel)
         .environmentObject(trainListViewModel)
+        .environmentObject(searchViewModel)
         .ignoresSafeArea()
         .onAppear {
             FavoritesViewModel.load { result in
@@ -56,6 +64,14 @@ struct HomeView: View {
                     }
             }
             
+            SearchViewModel.load { result in
+                switch result {
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let history):
+                        searchViewModel.history = Set(history)
+                    }
+            }
             if !notification {
                 favoritesViewModel.requestAuthorization()
             }

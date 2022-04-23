@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import WidgetKit
 
 class FavoritesViewModel: ObservableObject{
     @Published var favorites: [Favorite]
@@ -15,8 +16,36 @@ class FavoritesViewModel: ObservableObject{
         favorites = []
     }
     
+    func enabledToggle(){
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    func getNextFavorite(date: Date) -> Favorite?{
+        if(favorites.count == 0){
+            return nil
+        }
+        var nextFavorite : Favorite?
+        let date = DateComponents(calendar: Calendar.current).date!
+        var closestDate = DateComponents(calendar: Calendar.current,hour: 24,minute: 59).date!
+        
+        for fav in favorites{
+            let fav_hour = Int(fav.department.components(separatedBy: ":")[0])!
+            let fav_minutes = Int(fav.department.components(separatedBy: ":")[1])!
+            let fav_date = DateComponents(calendar: .current, hour: fav_hour, minute: fav_minutes).date!
+            
+            if(fav.enabled){
+                if(fav_date < closestDate && fav_date > date && fav.enabled){
+                    closestDate = fav_date
+                    nextFavorite = fav
+                }
+            }
+        }
+        return nextFavorite
+    }
+    
     func addFavorite(favorite: Favorite){
         self.favorites.append(favorite)
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func deleteFavorite(favorite: Favorite){
@@ -24,10 +53,14 @@ class FavoritesViewModel: ObservableObject{
         if index != nil {
             self.favorites.remove(at: index!)
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private static func fileURL() throws -> URL {
-        try FileManager.default.url(for: .documentDirectory,in: .userDomainMask,appropriateFor: nil,create: false)
+        //try FileManager.default.url(for: .documentDirectory,in: .userDomainMask,appropriateFor: nil,create: false)
+        //.appendingPathComponent("favorites.data")
+        
+        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.elvira")!
             .appendingPathComponent("favorites.data")
     }
     
@@ -46,6 +79,7 @@ class FavoritesViewModel: ObservableObject{
                 let favorites = try JSONDecoder().decode([Favorite].self, from: file.availableData)
                 DispatchQueue.main.async {
                     completion(.success(favorites))
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
             } catch {
                 DispatchQueue.main.async {
@@ -91,7 +125,8 @@ class FavoritesViewModel: ObservableObject{
         content.subtitle = "Indulnjon el időben az állomásra."
         content.sound = UNNotificationSound.default
         
-
+       
+        
         for favorite in self.favorites{
             if favorite.enabled{
                 var date = DateComponents()

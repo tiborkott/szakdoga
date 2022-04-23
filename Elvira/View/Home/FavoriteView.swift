@@ -21,9 +21,12 @@ struct FavoriteView: View {
                     .toggleStyle(CheckToggleStyle())
                     .onChange(of: enabled.wrappedValue, perform: { (value) in
                         favoritesViewModel.setNotifications()
+                        favoritesViewModel.enabledToggle()
+                        enabled.wrappedValue.toggle()
                     })
                     .labelsHidden()
                     .padding(10)
+                    
                 Spacer()
                 Text(favorite.type)
                     .font(Font.headline.weight(.bold))

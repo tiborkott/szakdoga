@@ -18,7 +18,6 @@ struct BoardingView: View {
                         .foregroundColor(Color("MAV-Black"))
                         .font(.title2)
                         
-                        
                     Text("Elvira")
                         .foregroundColor(Color("MAV-Blue"))
                         .font(.title2)

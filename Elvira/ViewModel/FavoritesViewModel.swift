@@ -20,31 +20,38 @@ class FavoritesViewModel: ObservableObject{
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func getNextFavorite(date: Date) -> Favorite?{
+    func getNextFavorite(favorite: Favorite) -> Favorite?{
         if(favorites.count == 0){
             return nil
         }
+        var nextWillBe = false
         var nextFavorite : Favorite?
-        let date = DateComponents(calendar: Calendar.current).date!
-        var closestDate = DateComponents(calendar: Calendar.current,hour: 24,minute: 59).date!
         
         for fav in favorites{
-            let fav_hour = Int(fav.department.components(separatedBy: ":")[0])!
-            let fav_minutes = Int(fav.department.components(separatedBy: ":")[1])!
-            let fav_date = DateComponents(calendar: .current, hour: fav_hour, minute: fav_minutes).date!
-            
-            if(fav.enabled){
-                if(fav_date < closestDate && fav_date > date && fav.enabled){
-                    closestDate = fav_date
-                    nextFavorite = fav
-                }
+            if(nextWillBe){
+                nextFavorite = fav
+                break
             }
+            
+            if(fav.department == favorite.department &&
+               fav.arrival == favorite.arrival &&
+               fav.from == favorite.from &&
+               fav.to == favorite.to &&
+               fav.enabled == favorite.enabled &&
+               fav.type == fav.type
+            ){
+                nextWillBe = true
+            }
+            
+            
+            
         }
         return nextFavorite
     }
     
     func addFavorite(favorite: Favorite){
         self.favorites.append(favorite)
+        self.favorites.sort(by: {$0.department < $1.department})
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -57,9 +64,6 @@ class FavoritesViewModel: ObservableObject{
     }
     
     private static func fileURL() throws -> URL {
-        //try FileManager.default.url(for: .documentDirectory,in: .userDomainMask,appropriateFor: nil,create: false)
-        //.appendingPathComponent("favorites.data")
-        
         FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.elvira")!
             .appendingPathComponent("favorites.data")
     }

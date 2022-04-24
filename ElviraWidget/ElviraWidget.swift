@@ -21,36 +21,36 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(
             date: Date(),
-            favorite: favoritesViewModel.getNextFavorite(date: Date()) ?? dummyFavorite
+            favorite: dummyFavorite
         )
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry =  SimpleEntry(date: Date(), favorite: favoritesViewModel.getNextFavorite(date: Date()) ?? dummyFavorite)
+        let entry =  SimpleEntry(date: Date(), favorite: favoritesViewModel.favorites[0] )
         
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-        let date = Date()
         
-        //Vegig mennin a vonatokon és úgy adni entryket, mert akkor kell kb frissíteni
-        for minuteOffset in 0 ..< 60 {
+        for favorite in favoritesViewModel.favorites{
+            let hour = Int(favorite.department.components(separatedBy: ":")[0])!
+            let minute = Int(favorite.department.components(separatedBy: ":")[1])!
             let entryDate = Calendar.current.date(
-                byAdding: .second,
-                value: minuteOffset,
-                to: date
+                bySettingHour: hour,
+                minute: minute+1,
+                second: 0,
+                of: Date()
             )!
             
             let entry = SimpleEntry(
                 date: entryDate,
-                favorite: favoritesViewModel.getNextFavorite(date: date) ?? dummyFavorite
+                favorite: favoritesViewModel.getNextFavorite(favorite: favorite) ?? dummyFavorite
             )
             
             entries.append(entry)
         }
-
         
         let timeline = Timeline(
             entries: entries,

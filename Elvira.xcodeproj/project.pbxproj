@@ -14,6 +14,9 @@
 		1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C6EEF27E7C3BE005E8641 /* StationView.swift */; };
 		1C312C53280AF8FD00C8982C /* ElviraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C312C52280AF8FD00C8982C /* ElviraUITests.swift */; };
 		1C312C55280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C312C54280AF8FD00C8982C /* ElviraUITestsLaunchTests.swift */; };
+		1C37ABC32815E0DA0004D182 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */; };
+		1C37ABC42815E0E10004D182 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48AB7A27E6596200D84286 /* SearchViewModel.swift */; };
+		1C37ABC52815E0E10004D182 /* TrainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C39430227D69B79003D2E0F /* TrainListViewModel.swift */; };
 		1C37CC1C28107D5D0088E7E1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC03281066A50088E7E1 /* WidgetKit.framework */; };
 		1C37CC1D28107D5D0088E7E1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC05281066A50088E7E1 /* SwiftUI.framework */; };
 		1C37CC2028107D5D0088E7E1 /* ElviraWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CC1F28107D5D0088E7E1 /* ElviraWidget.swift */; };
@@ -584,6 +587,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C37ABC42815E0E10004D182 /* SearchViewModel.swift in Sources */,
+				1C37ABC52815E0E10004D182 /* TrainListViewModel.swift in Sources */,
+				1C37ABC32815E0DA0004D182 /* FavoritesViewModel.swift in Sources */,
 				1CA2F753280243D600723880 /* ElviraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

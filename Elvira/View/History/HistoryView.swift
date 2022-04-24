@@ -19,9 +19,8 @@ struct HistoryView: View {
                 VStack(alignment: .center) {
                     Text("Keresési előzmények")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 20, weight: .bold))
-                        .padding(10)
-                        .padding(.top, 14)
+                        .font(.system(size: 18, weight: .bold))
+                        .padding(.top, 10)
                     
                     List{
                         ForEach(Array(history), id: \.self) { search in
@@ -40,9 +39,6 @@ struct HistoryView: View {
                             
                         }
                     }
-                }
-                .onAppear(){
-                    UITableView.appearance().backgroundColor = UIColor(Color("MAV-White"))
                 }
                 .frame(width: UIScreen.main.bounds.size.width * 0.85)
                 .frame(height: UIScreen.main.bounds.size.height * 0.5)

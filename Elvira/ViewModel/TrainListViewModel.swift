@@ -10,7 +10,7 @@ import Alamofire
 class TrainListViewModel: ObservableObject{
     @Published var timetables: Timetables?
     @Published var loaded: Bool = false
-    
+    var networkManager: NetworkManager = NetworkManager()
 
     func fetchElvira(from: String, to: String){
         let from_url = from.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
@@ -25,7 +25,7 @@ class TrainListViewModel: ObservableObject{
         let minute = calendar.component(.minute, from: date)
         
         let url = "https://apiv2.oroszi.net/elvira?from=\(from_url)&to=\(to_url)&date=\(year).\(month).\(day)&fromtime=\(hour):\(minute)"
-        //print(url)
+        print(url)
         let request = AF.request(url,method: .get,encoding: JSONEncoding.default)
         
         request.responseDecodable(of: Timetables.self) { (response) in

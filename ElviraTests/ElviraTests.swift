@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Elvira
 
 class ElviraTests: XCTestCase {
 
@@ -24,7 +25,10 @@ class ElviraTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
-
+    
+    func testExample1() throws {
+        favoritesViewModel = FavoritesViewModel()
+    }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

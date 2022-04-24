@@ -90,7 +90,7 @@ struct DetailView: View {
         }
         .ignoresSafeArea()
         .frame(width: UIScreen.main.bounds.size.width)
-        .frame(height: UIScreen.main.bounds.size.height)
+        .frame(height: UIScreen.main.bounds.size.height*2)
         .background(Color("MAV-LightGray"))
         .navigationBarTitle("Részletek")
         .navigationBarTitleDisplayMode(.inline)

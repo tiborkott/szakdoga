@@ -202,8 +202,8 @@
 		1C4A0F1127FCAD3C00054BC9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1C9638122814292C00482504 /* HistoryView.swift */,
 				1C48AB8027E6941C00D84286 /* HomeView.swift */,
+				1C9638122814292C00482504 /* HistoryView.swift */,
 				1CE535FF27C6226E004A8328 /* SreachView.swift */,
 				1C800D5027E9029F00AAB8BA /* FavoritesView.swift */,
 				1C800D5227E902C000AAB8BA /* FavoriteView.swift */,

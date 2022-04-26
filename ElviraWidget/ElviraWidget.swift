@@ -28,56 +28,85 @@ struct Provider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-        
-        for favorite in favoritesViewModel.favorites{
-            let hour = Int(favorite.department.components(separatedBy: ":")[0])!
-            let minute = Int(favorite.department.components(separatedBy: ":")[1])!
-            let entryDate = Calendar.current.date(
-                bySettingHour: hour,
-                minute: minute+1,
-                second: 0,
-                of: Date()
-            )!
-            
-            if favorite.enabled{
-                let entry = SimpleEntry(
-                    date: entryDate,
-                    favorite: favorite
-                )
-                entries.append(entry)
-            }
-        }
-        
-        if entries.isEmpty{
-            let entry = SimpleEntry(
-                date: Date(),
-                favorite: dummyFavorite
-            )
-            entries.append(entry)
-        }
-        
-        let hour = Int(favoritesViewModel.favorites.last!.department.components(separatedBy: ":")[0])!
-        let minute = Int(favoritesViewModel.favorites.last!.department.components(separatedBy: ":")[1])!
-        let entryDate = Calendar.current.date(
+    func getDateFromDepartment(favorite: Favorite) -> Date {
+        let hour = Int(favorite.department.components(separatedBy: ":")[0])!
+        let minute = Int(favorite.department.components(separatedBy: ":")[1])!
+        let date = Calendar.current.date(
             bySettingHour: hour,
-            minute: minute+1,
+            minute: minute,
             second: 0,
             of: Date()
         )!
-        let entry = SimpleEntry(
-            date: entryDate,
-            favorite: dummyFavorite
-        )
-        entries.append(entry)
+        return date
         
-        let timeline = Timeline(
-            entries: entries,
-            policy: .atEnd
-        )
-       
-        completion(timeline)
+    }
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        var entries: [SimpleEntry] = []
+        
+        if favoritesViewModel.favorites.isEmpty{
+            let end = SimpleEntry(
+                date: Date(),
+                favorite: dummyFavorite
+            )
+            entries.append(end)
+            
+            let timeline = Timeline(
+                entries: entries,
+                policy: .atEnd
+            )
+           
+            completion(timeline)
+        }else if(favoritesViewModel.favorites.count == 1 && favoritesViewModel.favorites[0].enabled){
+            let first = SimpleEntry(
+                date: Date(),
+                favorite: favoritesViewModel.favorites[0]
+            )
+            entries.append(first)
+            
+            let end = SimpleEntry(
+                date: getDateFromDepartment(favorite: favoritesViewModel.favorites[0]).addingTimeInterval(60),
+                favorite: dummyFavorite
+            )
+            entries.append(end)
+            
+            let timeline = Timeline(
+                entries: entries,
+                policy: .atEnd
+            )
+           
+            completion(timeline)
+        }else{
+            if(favoritesViewModel.favorites[0].enabled){
+                let first = SimpleEntry(
+                    date: Date(),
+                    favorite: favoritesViewModel.favorites[0]
+                )
+                entries.append(first)
+            }
+            
+            for index in 1...favoritesViewModel.favorites.count{
+                if favoritesViewModel.favorites[index].enabled{
+                    let entry = SimpleEntry(
+                        date: getDateFromDepartment(favorite: favoritesViewModel.favorites[index-1]).addingTimeInterval(60),
+                        favorite: favoritesViewModel.favorites[index]
+                    )
+                    entries.append(entry)
+                }
+            }
+            
+            let end = SimpleEntry(
+                date: getDateFromDepartment(favorite: favoritesViewModel.favorites[favoritesViewModel.favorites.count]).addingTimeInterval(60),
+                favorite: dummyFavorite
+            )
+            entries.append(end)
+            
+            let timeline = Timeline(
+                entries: entries,
+                policy: .atEnd
+            )
+           
+            completion(timeline)
+        }
     }
 }
 

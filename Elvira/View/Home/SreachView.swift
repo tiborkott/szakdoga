@@ -11,6 +11,7 @@ import SwiftUI
 
 struct SearchView: View {
     @Environment(\.scenePhase) private var scenePhase
+    @ObservedObject var networkManeger = NetworkManager()
     @EnvironmentObject var searchViewModel : SearchViewModel
     @EnvironmentObject var trainListViewModel: TrainListViewModel
     let saveAction: ()->Void
@@ -55,6 +56,7 @@ struct SearchView: View {
                             trainListViewModel.fetchElvira(from: searchViewModel.from, to: searchViewModel.to)
                             searchViewModel.setSearchFields(from: "",to: "")
                         })
+                        .disabled($networkManeger.notConnected.wrappedValue)
                         .disabled(!searchViewModel.isSreachable() )
                         .disabled(searchViewModel.historyShow)
                         Button{
@@ -69,8 +71,7 @@ struct SearchView: View {
                                 .padding(.bottom, 20)
                                 .scaleEffect(1.2)
                         }
-                            
-                            
+                       
                     }
                         
                 }

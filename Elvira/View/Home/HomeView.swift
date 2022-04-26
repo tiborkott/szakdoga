@@ -72,6 +72,7 @@ struct HomeView: View {
                         searchViewModel.history = Set(history)
                     }
             }
+            
             if !notification {
                 favoritesViewModel.requestAuthorization()
             }

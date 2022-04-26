@@ -9,25 +9,22 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    
     var favoritesViewModel: FavoritesViewModel
+    let dummyFavorite = Favorite(from: "--", to: "--", department: "--",arrival: "--",type: "Vonat")
     
     init(favoritesViewModel: FavoritesViewModel){
         self.favoritesViewModel = favoritesViewModel
-        WidgetCenter.shared.reloadAllTimelines()
+        //WidgetCenter.shared.reloadAllTimelines()
     }
     
-    let dummyFavorite = Favorite(from: "--", to: "--", department: "--",arrival: "--",type: "Vonat")
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(
-            date: Date(),
-            favorite: dummyFavorite
-        )
+        SimpleEntry(date: Date(),favorite: dummyFavorite)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry =  SimpleEntry(date: Date(), favorite: favoritesViewModel.favorites[0] )
-        
+        let entry =  SimpleEntry(date: Date(), favorite: dummyFavorite)
         completion(entry)
     }
 
@@ -44,13 +41,36 @@ struct Provider: TimelineProvider {
                 of: Date()
             )!
             
+            if favorite.enabled{
+                let entry = SimpleEntry(
+                    date: entryDate,
+                    favorite: favorite
+                )
+                entries.append(entry)
+            }
+        }
+        
+        if entries.isEmpty{
             let entry = SimpleEntry(
-                date: entryDate,
-                favorite: favoritesViewModel.getNextFavorite(favorite: favorite) ?? dummyFavorite
+                date: Date(),
+                favorite: dummyFavorite
             )
-            
             entries.append(entry)
         }
+        
+        let hour = Int(favoritesViewModel.favorites.last!.department.components(separatedBy: ":")[0])!
+        let minute = Int(favoritesViewModel.favorites.last!.department.components(separatedBy: ":")[1])!
+        let entryDate = Calendar.current.date(
+            bySettingHour: hour,
+            minute: minute+1,
+            second: 0,
+            of: Date()
+        )!
+        let entry = SimpleEntry(
+            date: entryDate,
+            favorite: dummyFavorite
+        )
+        entries.append(entry)
         
         let timeline = Timeline(
             entries: entries,

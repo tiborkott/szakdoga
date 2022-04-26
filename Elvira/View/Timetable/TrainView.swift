@@ -4,7 +4,6 @@
 //
 //  Created by Kött Tibor on 2022. 02. 23..
 //
-
 import SwiftUI
 
 struct TrainView: View {

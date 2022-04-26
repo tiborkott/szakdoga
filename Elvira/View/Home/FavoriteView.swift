@@ -17,14 +17,13 @@ struct FavoriteView: View {
     var body: some View {
         VStack{
             HStack {
-                Toggle("", isOn: enabled)
+                Toggle("", isOn: self.enabled)
                     .toggleStyle(CheckToggleStyle())
-                    .onChange(of: enabled.wrappedValue, perform: { (value) in
-                        favoritesViewModel.setNotifications()
-                        favoritesViewModel.enabledToggle()
-                        enabled.wrappedValue.toggle()
-                    })
                     .labelsHidden()
+                    .onChange(of: enabled.wrappedValue, perform: { value in
+                        favoritesViewModel.setNotifications()
+                        favoritesViewModel.enabledToggled()
+                    })
                     .padding(10)
                     
                 Spacer()

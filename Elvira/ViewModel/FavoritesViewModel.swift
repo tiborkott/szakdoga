@@ -16,37 +16,8 @@ class FavoritesViewModel: ObservableObject{
         favorites = []
     }
     
-    func enabledToggle(){
+    func enabledToggled(){
         WidgetCenter.shared.reloadAllTimelines()
-    }
-    
-    func getNextFavorite(favorite: Favorite) -> Favorite?{
-        if(favorites.count == 0){
-            return nil
-        }
-        var nextWillBe = false
-        var nextFavorite : Favorite?
-        
-        for fav in favorites{
-            if(nextWillBe){
-                nextFavorite = fav
-                break
-            }
-            
-            if(fav.department == favorite.department &&
-               fav.arrival == favorite.arrival &&
-               fav.from == favorite.from &&
-               fav.to == favorite.to &&
-               fav.enabled == favorite.enabled &&
-               fav.type == fav.type
-            ){
-                nextWillBe = true
-            }
-            
-            
-            
-        }
-        return nextFavorite
     }
     
     func addFavorite(favorite: Favorite){

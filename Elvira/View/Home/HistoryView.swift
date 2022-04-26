@@ -19,7 +19,7 @@ struct HistoryView: View {
                 VStack(alignment: .center) {
                     Text("Keresési előzmények")
                         .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.system(size: 20, weight: .bold))
                         .padding(.top, 10)
                     
                     List{

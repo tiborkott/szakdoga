@@ -10,32 +10,30 @@ import Alamofire
 class TrainListViewModel: ObservableObject{
     @Published var timetables: Timetables?
     @Published var loaded: Bool = false
-    var networkManager: NetworkManager = NetworkManager()
 
     func fetchElvira(from: String, to: String){
-        let from_url = from.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-        let to_url = to.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-        
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        
-        let url = "https://apiv2.oroszi.net/elvira?from=\(from_url)&to=\(to_url)&date=\(year).\(month).\(day)&fromtime=\(hour):\(minute)"
-        print(url)
-        let request = AF.request(url,method: .get,encoding: JSONEncoding.default)
-        
-        request.responseDecodable(of: Timetables.self) { (response) in
-            do{
-                self.timetables = try JSONDecoder().decode(Timetables.self, from: response.data!)
-                self.loaded = true
-            }catch{
-                print(error)
+            let from_url = from.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+            let to_url = to.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+
+            let date = Date()
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: date)
+            let month = calendar.component(.month, from: date)
+            let day = calendar.component(.day, from: date)
+            let hour = calendar.component(.hour, from: date)
+            let minute = calendar.component(.minute, from: date)
+
+            let url = "https://apiv2.oroszi.net/elvira?from=\(from_url)&to=\(to_url)&date=\(year).\(month).\(day)&fromtime=\(hour):\(minute)"
+            let request = AF.request(url,method: .get,encoding: JSONEncoding.default)
+
+            request.responseDecodable(of: Timetables.self) { (response) in
+                do{
+                    self.timetables = try JSONDecoder().decode(Timetables.self, from: response.data!)
+                    self.loaded = true
+                }catch{
+                    print(error)
+                }
             }
-        }
     }
     
     
@@ -47,13 +45,14 @@ class TrainListViewModel: ObservableObject{
             $0.to == favorite.to &&
             $0.type == favorite.type
         })
-        
+            
         if index == nil {
             return false
         }else{
             return true
         }
     }
+        
     func trainType(timetable: Timetable) -> String {
         if(timetable.type == "fast"){
             return "Gyors"

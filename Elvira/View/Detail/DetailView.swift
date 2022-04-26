@@ -52,7 +52,9 @@ struct DetailView: View {
                     Image(systemName: "wallet.pass").foregroundColor(Color("MAV-Blue"))
                     Text("Osztály:")
                     Text(timetable.className.components(separatedBy:".")[0]+".")
-                    Text(timetable.className.components(separatedBy:".")[1]+".")
+                    if(!timetable.className.components(separatedBy:".")[1].isEmpty){
+                        Text(timetable.className.components(separatedBy:".")[1]+".")
+                    }
                     Spacer()
                 }
                 .padding(.leading, 20)

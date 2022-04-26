@@ -22,7 +22,7 @@ class SearchViewModel: ObservableObject{
             if stations.contains(self.from){
                 fromBool = true
             }else {
-                toBool = false
+                fromBool = false
             }
         }
     }
@@ -88,7 +88,7 @@ class SearchViewModel: ObservableObject{
     }
     
     func isSreachable () -> Bool {
-        return fromBool && toBool
+        return (fromBool && toBool) && (from != to)
     }
     
     func setSearchFields(from: String,to: String){

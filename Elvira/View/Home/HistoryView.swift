@@ -40,8 +40,8 @@ struct HistoryView: View {
                         }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.size.width * 0.8)
-                .frame(height: UIScreen.main.bounds.size.height * 0.45)
+                .frame(width: UIScreen.main.bounds.size.width * 0.85)
+                .frame(height: UIScreen.main.bounds.size.height * 0.5)
                 .background(Color("MAV-Blue"))
                 .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                 .shadow(radius: 10)

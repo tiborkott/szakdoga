@@ -20,11 +20,11 @@ class TrainListViewModel_Test: XCTestCase {
         let expectation = expectation(description: "Fetch")
         trainListViewModel.fetchElvira(from: "Cegléd", to: "Zugló")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 6.0)
+        wait(for: [expectation], timeout: 5.0)
 
         
         XCTAssertNotNil(trainListViewModel.timetables)

@@ -87,7 +87,7 @@ class FavoritesViewModel_Test: XCTestCase {
         )
     }
     
-    func test_FavoritesViewModel_notificationsNotEnabled() throws {
+    func test_FavoritesViewModel_notificationsDisabled() throws {
         let favoritesViewModel = FavoritesViewModel()
         let favorite = Favorite(
             enabled: false,

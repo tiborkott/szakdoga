@@ -16,7 +16,6 @@ struct TrainListView: View {
     
 
     var body: some View {
-        ZStack{
             if(trainListViewModel.loaded == true){
                 ScrollView(showsIndicators: false){
                     ForEach(trainListViewModel.timetables?.timetable ?? []){ timetable in
@@ -57,7 +56,6 @@ struct TrainListView: View {
                         })
                 }    
             }
-        }
         
     }
 }

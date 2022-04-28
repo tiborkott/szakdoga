@@ -12,7 +12,6 @@
 		1C2068BF281149AF006D35AD /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5027E9029F00AAB8BA /* FavoritesView.swift */; };
 		1C2068C0281149B1006D35AD /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C800D5227E902C000AAB8BA /* FavoriteView.swift */; };
 		1C2C6EF027E7C3BE005E8641 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2C6EEF27E7C3BE005E8641 /* StationView.swift */; };
-		1C312C53280AF8FD00C8982C /* ElviraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C312C52280AF8FD00C8982C /* ElviraUITests.swift */; };
 		1C37CC1C28107D5D0088E7E1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC03281066A50088E7E1 /* WidgetKit.framework */; };
 		1C37CC1D28107D5D0088E7E1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC05281066A50088E7E1 /* SwiftUI.framework */; };
 		1C37CC2028107D5D0088E7E1 /* ElviraWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CC1F28107D5D0088E7E1 /* ElviraWidget.swift */; };
@@ -33,6 +32,7 @@
 		1CA693D92817D869005CBC9F /* SearchViewModel_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA693D82817D869005CBC9F /* SearchViewModel_Test.swift */; };
 		1CA693DB28182486005CBC9F /* FavoritesViewModel_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA693DA28182486005CBC9F /* FavoritesViewModel_Test.swift */; };
 		1CACE56627FD8D5F002B4FD3 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */; };
+		1CB1ED6C2819D82B002B6BC2 /* Elvira_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1ED6B2819D82B002B6BC2 /* Elvira_UITests.swift */; };
 		1CD9547727EA5B5B0021A385 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9547627EA5B5B0021A385 /* BoardingView.swift */; };
 		1CE0883E27D55F6A007A4E11 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883627D55F69007A4E11 /* Detail.swift */; };
 		1CE0883F27D55F6A007A4E11 /* TimetableTrainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */; };
@@ -52,13 +52,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1C312C56280AF8FD00C8982C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1CE83D8127BA8B38003E8982;
-			remoteInfo = Elvira;
-		};
 		1C37CC2428107D610088E7E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
@@ -67,6 +60,13 @@
 			remoteInfo = ElviraWidgetExtension;
 		};
 		1CA2F754280243D600723880 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CE83D8127BA8B38003E8982;
+			remoteInfo = Elvira;
+		};
+		1CB1ED662819D17D002B6BC2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1CE83D7A27BA8B38003E8982 /* Project object */;
 			proxyType = 1;
@@ -91,8 +91,6 @@
 
 /* Begin PBXFileReference section */
 		1C2C6EEF27E7C3BE005E8641 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
-		1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElviraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C312C52280AF8FD00C8982C /* ElviraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElviraUITests.swift; sourceTree = "<group>"; };
 		1C37CC03281066A50088E7E1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1C37CC05281066A50088E7E1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ElviraWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +115,8 @@
 		1CA693D82817D869005CBC9F /* SearchViewModel_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel_Test.swift; sourceTree = "<group>"; };
 		1CA693DA28182486005CBC9F /* FavoritesViewModel_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel_Test.swift; sourceTree = "<group>"; };
 		1CACE56527FD8D5F002B4FD3 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		1CB1ED602819D17D002B6BC2 /* ElviraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElviraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CB1ED6B2819D82B002B6BC2 /* Elvira_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elvira_UITests.swift; sourceTree = "<group>"; };
 		1CD9547627EA5B5B0021A385 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		1CE0883627D55F69007A4E11 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		1CE0883727D55F69007A4E11 /* TimetableTrainInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableTrainInfo.swift; sourceTree = "<group>"; };
@@ -139,13 +139,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C312C4D280AF8FD00C8982C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1C37CC1828107D5D0088E7E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +149,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1CA2F74D280243D600723880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CB1ED5D2819D17D002B6BC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,14 +173,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C312C51280AF8FD00C8982C /* ElviraUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1C312C52280AF8FD00C8982C /* ElviraUITests.swift */,
-			);
-			path = ElviraUITests;
-			sourceTree = "<group>";
-		};
 		1C37CC1E28107D5D0088E7E1 /* ElviraWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +246,14 @@
 			path = ElviraTests;
 			sourceTree = "<group>";
 		};
+		1CB1ED612819D17D002B6BC2 /* ElviraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1CB1ED6B2819D82B002B6BC2 /* Elvira_UITests.swift */,
+			);
+			path = ElviraUITests;
+			sourceTree = "<group>";
+		};
 		1CE535FE27C6225D004A8328 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +294,7 @@
 				1CE83D8427BA8B38003E8982 /* Elvira */,
 				1C37CC1E28107D5D0088E7E1 /* ElviraWidget */,
 				1CA2F751280243D600723880 /* ElviraTests */,
-				1C312C51280AF8FD00C8982C /* ElviraUITests */,
+				1CB1ED612819D17D002B6BC2 /* ElviraUITests */,
 				1CE83D8327BA8B38003E8982 /* Products */,
 				575C1EC030442697683BC0DD /* Pods */,
 				D4C2F86E5443811918570E83 /* Frameworks */,
@@ -306,8 +306,8 @@
 			children = (
 				1CE83D8227BA8B38003E8982 /* Elvira.app */,
 				1CA2F750280243D600723880 /* ElviraTests.xctest */,
-				1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */,
 				1C37CC1B28107D5D0088E7E1 /* ElviraWidgetExtension.appex */,
+				1CB1ED602819D17D002B6BC2 /* ElviraUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,24 +356,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C312C4F280AF8FD00C8982C /* ElviraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C312C5A280AF8FD00C8982C /* Build configuration list for PBXNativeTarget "ElviraUITests" */;
-			buildPhases = (
-				1C312C4C280AF8FD00C8982C /* Sources */,
-				1C312C4D280AF8FD00C8982C /* Frameworks */,
-				1C312C4E280AF8FD00C8982C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1C312C57280AF8FD00C8982C /* PBXTargetDependency */,
-			);
-			name = ElviraUITests;
-			productName = ElviraUITests;
-			productReference = 1C312C50280AF8FD00C8982C /* ElviraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C37CC2728107D610088E7E1 /* Build configuration list for PBXNativeTarget "ElviraWidgetExtension" */;
@@ -409,6 +391,24 @@
 			productReference = 1CA2F750280243D600723880 /* ElviraTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		1CB1ED5F2819D17D002B6BC2 /* ElviraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CB1ED6A2819D17D002B6BC2 /* Build configuration list for PBXNativeTarget "ElviraUITests" */;
+			buildPhases = (
+				1CB1ED5C2819D17D002B6BC2 /* Sources */,
+				1CB1ED5D2819D17D002B6BC2 /* Frameworks */,
+				1CB1ED5E2819D17D002B6BC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CB1ED672819D17D002B6BC2 /* PBXTargetDependency */,
+			);
+			name = ElviraUITests;
+			productName = ElviraUITests;
+			productReference = 1CB1ED602819D17D002B6BC2 /* ElviraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		1CE83D8127BA8B38003E8982 /* Elvira */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CE83D9027BA8B3C003E8982 /* Build configuration list for PBXNativeTarget "Elvira" */;
@@ -440,15 +440,16 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					1C312C4F280AF8FD00C8982C = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 1CE83D8127BA8B38003E8982;
-					};
 					1C37CC1A28107D5D0088E7E1 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					1CA2F74F280243D600723880 = {
 						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 1CE83D8127BA8B38003E8982;
+					};
+					1CB1ED5F2819D17D002B6BC2 = {
+						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 						TestTargetID = 1CE83D8127BA8B38003E8982;
 					};
 					1CE83D8127BA8B38003E8982 = {
@@ -471,20 +472,13 @@
 			targets = (
 				1CE83D8127BA8B38003E8982 /* Elvira */,
 				1CA2F74F280243D600723880 /* ElviraTests */,
-				1C312C4F280AF8FD00C8982C /* ElviraUITests */,
 				1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */,
+				1CB1ED5F2819D17D002B6BC2 /* ElviraUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C312C4E280AF8FD00C8982C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1C37CC1928107D5D0088E7E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +488,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1CA2F74E280243D600723880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CB1ED5E2819D17D002B6BC2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -554,14 +555,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C312C4C280AF8FD00C8982C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C312C53280AF8FD00C8982C /* ElviraUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1C37CC1728107D5D0088E7E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,6 +574,14 @@
 				1CA693D92817D869005CBC9F /* SearchViewModel_Test.swift in Sources */,
 				1CA693D728174B44005CBC9F /* TrainListViewModel_Test.swift in Sources */,
 				1CA693DB28182486005CBC9F /* FavoritesViewModel_Test.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CB1ED5C2819D17D002B6BC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CB1ED6C2819D82B002B6BC2 /* Elvira_UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,11 +621,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1C312C57280AF8FD00C8982C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1CE83D8127BA8B38003E8982 /* Elvira */;
-			targetProxy = 1C312C56280AF8FD00C8982C /* PBXContainerItemProxy */;
-		};
 		1C37CC2528107D610088E7E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1C37CC1A28107D5D0088E7E1 /* ElviraWidgetExtension */;
@@ -635,45 +631,14 @@
 			target = 1CE83D8127BA8B38003E8982 /* Elvira */;
 			targetProxy = 1CA2F754280243D600723880 /* PBXContainerItemProxy */;
 		};
+		1CB1ED672819D17D002B6BC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CE83D8127BA8B38003E8982 /* Elvira */;
+			targetProxy = 1CB1ED662819D17D002B6BC2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C312C58280AF8FD00C8982C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KUEJ6P9L5N;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.ElviraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Elvira;
-			};
-			name = Debug;
-		};
-		1C312C59280AF8FD00C8982C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KUEJ6P9L5N;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.ElviraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Elvira;
-			};
-			name = Release;
-		};
 		1C37CC2828107D610088E7E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -767,6 +732,55 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elvira.app/Elvira";
+			};
+			name = Release;
+		};
+		1CB1ED682819D17D002B6BC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.ElviraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Elvira;
+			};
+			name = Debug;
+		};
+		1CB1ED692819D17D002B6BC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KUEJ6P9L5N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiborkott.ElviraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Elvira;
 			};
 			name = Release;
 		};
@@ -957,15 +971,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C312C5A280AF8FD00C8982C /* Build configuration list for PBXNativeTarget "ElviraUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C312C58280AF8FD00C8982C /* Debug */,
-				1C312C59280AF8FD00C8982C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1C37CC2728107D610088E7E1 /* Build configuration list for PBXNativeTarget "ElviraWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -980,6 +985,15 @@
 			buildConfigurations = (
 				1CA2F757280243D600723880 /* Debug */,
 				1CA2F758280243D600723880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CB1ED6A2819D17D002B6BC2 /* Build configuration list for PBXNativeTarget "ElviraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CB1ED682819D17D002B6BC2 /* Debug */,
+				1CB1ED692819D17D002B6BC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

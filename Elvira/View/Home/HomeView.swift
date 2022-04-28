@@ -25,26 +25,18 @@ struct HomeView: View {
                         }
                     }
                 }
-                    .offset(y: 30)
+                .offset(y: 30)
                 FavoritesView(){
                     FavoritesViewModel.save(favorites: favoritesViewModel.favorites){ result in
                         if case .failure(let error) = result {
                             fatalError(error.localizedDescription)
                         }
                     }
-                    
                 }
                 .offset(y: 30)
             }
             .alert(isPresented: $networkManeger.notConnected){
-                Alert(title: Text("Nincs internet kapcsolat"), message: Text(networkManeger.connectionDescription),  dismissButton: Alert.Button.default(
-                    Text("Ok"), action: {
-                        let settingsURL = URL(string: UIApplication.openSettingsURLString)
-                        UIApplication.shared.canOpenURL(settingsURL!)
-                        UIApplication.shared.open(settingsURL!)
-
-                    })
-                )
+                Alert(title: Text("Nincs internet kapcsolat"), message: Text(networkManeger.connectionDescription),  dismissButton: Alert.Button.default( Text("Ok"), action: {}))
             }
             .background(Color("MAV-LightGray"))
 

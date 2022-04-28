@@ -15,7 +15,7 @@ struct Provider: TimelineProvider {
     
     init(favoritesViewModel: FavoritesViewModel){
         self.favoritesViewModel = favoritesViewModel
-        //WidgetCenter.shared.reloadAllTimelines()
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     
@@ -41,72 +41,43 @@ struct Provider: TimelineProvider {
         
     }
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+
         var entries: [SimpleEntry] = []
+        var first: Bool = true
         
-        if favoritesViewModel.favorites.isEmpty{
-            let end = SimpleEntry(
-                date: Date(),
-                favorite: dummyFavorite
-            )
-            entries.append(end)
-            
-            let timeline = Timeline(
-                entries: entries,
-                policy: .atEnd
-            )
-           
-            completion(timeline)
-        }else if(favoritesViewModel.favorites.count == 1 && favoritesViewModel.favorites[0].enabled){
-            let first = SimpleEntry(
-                date: Date(),
-                favorite: favoritesViewModel.favorites[0]
-            )
-            entries.append(first)
-            
-            let end = SimpleEntry(
-                date: getDateFromDepartment(favorite: favoritesViewModel.favorites[0]).addingTimeInterval(60),
-                favorite: dummyFavorite
-            )
-            entries.append(end)
-            
-            let timeline = Timeline(
-                entries: entries,
-                policy: .atEnd
-            )
-           
-            completion(timeline)
-        }else{
-            if(favoritesViewModel.favorites[0].enabled){
-                let first = SimpleEntry(
-                    date: Date(),
-                    favorite: favoritesViewModel.favorites[0]
-                )
-                entries.append(first)
-            }
-            
-            for index in 1...favoritesViewModel.favorites.count{
-                if favoritesViewModel.favorites[index].enabled{
+        for index in 0...favoritesViewModel.favorites.count-1{
+            if favoritesViewModel.favorites[index].enabled && (getDateFromDepartment(favorite: favoritesViewModel.favorites[index]) > Date()){
+                if(first){
+                    let entry = SimpleEntry(
+                        date: Date(),
+                        favorite: favoritesViewModel.favorites[index]
+                    )
+                    entries.append(entry)
+                    first = false
+                }else{
                     let entry = SimpleEntry(
                         date: getDateFromDepartment(favorite: favoritesViewModel.favorites[index-1]).addingTimeInterval(60),
                         favorite: favoritesViewModel.favorites[index]
                     )
                     entries.append(entry)
                 }
+                   
             }
-            
-            let end = SimpleEntry(
-                date: getDateFromDepartment(favorite: favoritesViewModel.favorites[favoritesViewModel.favorites.count]).addingTimeInterval(60),
-                favorite: dummyFavorite
-            )
-            entries.append(end)
-            
-            let timeline = Timeline(
-                entries: entries,
-                policy: .atEnd
-            )
-           
-            completion(timeline)
         }
+        
+            
+        let end = SimpleEntry(
+            date: getDateFromDepartment(favorite: entries.last!.favorite).addingTimeInterval(60),
+            favorite: dummyFavorite
+        )
+        entries.append(end)
+            
+        let timeline = Timeline(
+            entries: entries,
+            policy: .atEnd
+        )
+           
+        completion(timeline)
     }
 }
 
@@ -189,6 +160,7 @@ struct ElviraWidgetEntryView : View {
 
 @main
 struct ElviraWidget: Widget {
+    
     let kind: String = "ElviraWidget"
     var favoritesViewModel = FavoritesViewModel()
     //let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.elvira")!.appendingPathComponent("favorites.data")

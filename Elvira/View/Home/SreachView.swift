@@ -56,7 +56,7 @@ struct SearchView: View {
                             trainListViewModel.fetchElvira(from: searchViewModel.from, to: searchViewModel.to)
                             searchViewModel.setSearchFields(from: "",to: "")
                         })
-                        .disabled($networkManeger.notConnected.wrappedValue)
+                        .disabled(networkManeger.notConnected)
                         .disabled(!searchViewModel.isSreachable() )
                         .disabled(searchViewModel.historyShow)
                         Button{

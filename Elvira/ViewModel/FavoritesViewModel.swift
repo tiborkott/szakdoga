@@ -23,7 +23,6 @@ class FavoritesViewModel: ObservableObject{
     func addFavorite(favorite: Favorite){
         self.favorites.append(favorite)
         self.favorites.sort(by: {$0.department < $1.department})
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func deleteFavorite(favorite: Favorite){
@@ -85,7 +84,7 @@ class FavoritesViewModel: ObservableObject{
     func requestAuthorization(){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
-                //print("All set!")
+                
             } else if let error = error {
                 print(error.localizedDescription)
             }

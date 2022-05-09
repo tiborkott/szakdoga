@@ -60,7 +60,6 @@ struct SearchView: View {
                         .disabled(!searchViewModel.isSreachable() )
                         .disabled(searchViewModel.historyShow)
                         Button{
-                            //view history list in view
                             withAnimation {
                                 searchViewModel.historyShow.toggle()
                             }

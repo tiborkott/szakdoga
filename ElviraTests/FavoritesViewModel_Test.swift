@@ -82,7 +82,7 @@ class FavoritesViewModel_Test: XCTestCase {
         favoritesViewModel.addFavorite(favorite: favorite)
         favoritesViewModel.setNotifications()
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { notifications in
-                XCTAssertNotNil(notifications)
+            XCTAssertFalse(notifications.isEmpty)
             }
         )
     }

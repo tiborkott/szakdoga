@@ -19,12 +19,12 @@ struct Provider: TimelineProvider {
     }
     
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(),favorite: dummyFavorite)
+    func placeholder(in context: Context) -> ElviraEntry {
+        ElviraEntry(date: Date(),favorite: dummyFavorite)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry =  SimpleEntry(date: Date(), favorite: dummyFavorite)
+    func getSnapshot(in context: Context, completion: @escaping (ElviraEntry) -> ()) {
+        let entry =  ElviraEntry(date: Date(), favorite: dummyFavorite)
         completion(entry)
     }
 
@@ -42,46 +42,53 @@ struct Provider: TimelineProvider {
     }
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
 
-        var entries: [SimpleEntry] = []
+        var entries: [ElviraEntry] = []
         var first: Bool = true
         
         for index in 0...favoritesViewModel.favorites.count-1{
             if favoritesViewModel.favorites[index].enabled && (getDateFromDepartment(favorite: favoritesViewModel.favorites[index]) > Date()){
                 if(first){
-                    let entry = SimpleEntry(
+                    let entry = ElviraEntry(
                         date: Date(),
                         favorite: favoritesViewModel.favorites[index]
                     )
                     entries.append(entry)
                     first = false
                 }else{
-                    let entry = SimpleEntry(
+                    let entry = ElviraEntry(
                         date: getDateFromDepartment(favorite: favoritesViewModel.favorites[index-1]).addingTimeInterval(60),
                         favorite: favoritesViewModel.favorites[index]
                     )
                     entries.append(entry)
                 }
-                   
+                
             }
         }
         
             
-        let end = SimpleEntry(
+        let end = ElviraEntry(
             date: getDateFromDepartment(favorite: entries.last!.favorite).addingTimeInterval(60),
             favorite: dummyFavorite
         )
         entries.append(end)
-            
+        
+  
+        var dateComponents = DateComponents()
+        dateComponents.year = Calendar.current.component(.year, from: Date())
+        dateComponents.month = Calendar.current.component(.month, from: Date())
+        dateComponents.day =  Calendar.current.component(.month, from: Date())+1
+        dateComponents.hour = 0
+        dateComponents.minute = 1
+        
         let timeline = Timeline(
             entries: entries,
-            policy: .atEnd
+            policy: .after(Calendar.current.date(from: dateComponents)!)
         )
-           
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct ElviraEntry: TimelineEntry {
     let date: Date
     let favorite: Favorite
 }
@@ -163,7 +170,6 @@ struct ElviraWidget: Widget {
     
     let kind: String = "ElviraWidget"
     var favoritesViewModel = FavoritesViewModel()
-    //let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.elvira")!.appendingPathComponent("favorites.data")
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider(favoritesViewModel: favoritesViewModel)) { entry in
@@ -180,7 +186,7 @@ struct ElviraWidget_Previews: PreviewProvider {
     
     static var previews: some View {
         Group{
-            ElviraWidgetEntryView(entry: SimpleEntry(date: Date(), favorite: Favorite(from: "Cegléd", to: "Zugló", department: "7:38",arrival: "8:30",type: "Gyors")), favoritesViewModel: favoritesViewModel)
+            ElviraWidgetEntryView(entry: ElviraEntry(date: Date(), favorite: Favorite(from: "Cegléd", to: "Zugló", department: "7:38",arrival: "8:30",type: "Gyors")), favoritesViewModel: favoritesViewModel)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
         }
         

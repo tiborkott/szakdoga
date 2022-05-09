@@ -153,7 +153,7 @@ class Elvira_UITests: XCTestCase {
         app.navigationBars["Vonatok"].staticTexts["Vonatok"].tap()
         XCTAssertTrue(app.navigationBars["Vonatok"].staticTexts["Vonatok"].exists)
         
-        app.scrollViews.otherElements.containing(.image, identifier:"train.side.front.car").children(matching: .button).matching(identifier: "Forward").element(boundBy: 0).tap()
+        app.scrollViews.otherElements.children(matching: .button).matching(identifier: "Forward").element(boundBy: 0).tap()
         
         XCTAssertTrue(app.scrollViews.otherElements.staticTexts["Szombathely"].exists)
         app.scrollViews.otherElements.staticTexts["Szombathely"].swipeUp()
@@ -164,6 +164,5 @@ class Elvira_UITests: XCTestCase {
         app.images["Timer"].tap()
         app.images["tram.circle"].tap()
         app.images["wallet.pass"].tap()
-                
     }
 }
